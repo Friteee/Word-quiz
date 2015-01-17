@@ -1,0 +1,8 @@
+In this project there were used various art images
+Here is the list of all of them:
+
+space1_0.bmp
+http://opengameart.org/content/space-background-2 by StumpyTrust
+
+Modified version of sci fi platform tiles
+http://opengameart.org/content/sci-fi-platform-tiles-sectioned by Eris

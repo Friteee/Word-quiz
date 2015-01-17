@@ -1,0 +1,5 @@
+Everything code-related is published under GNU GPL V 3.0 license, found in this folder, unless it is third party assets, which are published by their respective licenses.
+
+Everything art-related is published under CC-BY-3.0, found in this folder, unless it is third party assets, which are published by their respective licenses.
+
+You cannot delete or modify any licenses, provided in this folder.
