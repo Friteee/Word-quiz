@@ -8,13 +8,14 @@
 namespace game
 {
 
-class Gaming_mode : Program_mode
+class Gaming_mode : public Program_mode
 {
     public :
 
     Gaming_mode(utility::Configuration * init_config);
     bool run ()override;
     bool handle_input()override;
+    void stop()override;
 
     private:
 
@@ -26,6 +27,7 @@ class Gaming_mode : Program_mode
     utility::Configuration * main_config;
     // does user wants to change programs mode?
     bool change_mode;
+    bool quit;
 };
 
 }

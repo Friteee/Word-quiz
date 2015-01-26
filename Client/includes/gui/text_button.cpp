@@ -1,5 +1,6 @@
 
 #include "text_button.h"
+#include "click.h"
 #include <functional>
 #include "../video/window.h"
 #include "../utility/configuration.h"
@@ -70,32 +71,19 @@ void Text_button::show()
 
 void Text_button::update()
 {
+    Click left_click;
     if(!visible)
     {
         return;
     }
-    int x,y;
-    if(SDL_GetMouseState(&x, &y) & SDL_BUTTON(SDL_BUTTON_LEFT)&&!is_clicked)
+
+    if(left_click.has_clicked(location))
     {
-        if(x>location.x&&x<location.x+location.w&&y>location.y&&y<location.y+location.h)
-        {
-            is_clicked = true;
-        }
-    }
-    else if(is_clicked)
-    {
-        if(x>location.x&&x<location.x+location.w&&y>location.y&&y<location.y+location.h&&!(SDL_GetMouseState(&x, &y) & SDL_BUTTON(SDL_BUTTON_LEFT)))
-        {
-            if(on_click)
-                on_click();
-            else
-                printf("Warning : no function specified for a button\n");
-            is_clicked=false;
-        }
-        else if (!(SDL_GetMouseState(&x, &y) & SDL_BUTTON(SDL_BUTTON_LEFT)))
-        {
-            is_clicked=false;
-        }
+        if(on_click)
+            on_click();
+        else
+            printf("Warning : no function specified for a button\n");
+        is_clicked=false;
     }
 }
 

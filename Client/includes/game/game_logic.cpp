@@ -65,13 +65,11 @@ Game_logic::Game_logic():
     height       (atoi(main_config.find_string("height").c_str())!=0?atoi(main_config.find_string("height").c_str()):HEIGHT),
     fullscreen   (main_config.find_string("fullscreen") == string("true") ),
     is_created   (video::Video_subsystem::initialize_subsystem(width , height , fullscreen)),
-    is_editor    (main_config.find_string("editor")==string("true")),
-    quit_program (false),
-    editor       (&main_config),
-    gaming_mode  (&main_config)
+    quit_program (false)
 {
     video::Video_subsystem::set_programs_name(main_config.find_string("programs_name").c_str());
 
+    current = new Main_menu_mode (&main_config);
     // if we have full screen resize camera appropriately
     if(fullscreen)
     {
@@ -88,18 +86,9 @@ Game_logic::Game_logic():
 
 void Game_logic::run()
 {
-    if(instance->is_editor&&instance->editor.run()==false)
-        return;
-    while(1)
+    while(instance->current->run())
     {
-        if(!instance->is_editor&&instance->gaming_mode.run()==false)
-            break;
-        else if(!instance->is_editor)
-            instance->is_editor=true;
-        else if(instance->is_editor&&instance->editor.run()==false)
-            break;
-        else
-            instance->is_editor=false;
+
     }
 }
 
@@ -116,7 +105,17 @@ Game_logic::~Game_logic()
     return;
 }
 
-
+void Game_logic::set_current_mode(Program_mode * init_mode)
+{
+    // stop current instance from running
+    instance->current->stop();
+    // delete previous instance
+    delete instance->previous;
+    // current program mode instance is now previous instance
+    instance->previous = instance->current;
+    // current instance is now user's assigned
+    instance->current = init_mode;
+}
 
 }// end of namespace game
 

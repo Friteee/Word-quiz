@@ -1,6 +1,9 @@
 
 
 #include "main_menu_mode.h"
+#include "gaming_mode.h"
+#include "help_mode.h"
+#include "game_logic.h"
 #include "../utility/timer.h"
 #include "../gui/click.h"
 #include <cstdio>
@@ -14,14 +17,14 @@ namespace game
  * Returns false if user wants to quit
  */
 
-bool Editor_mode::run()
+bool Main_menu_mode::run()
 {
     fps_timer.start();
     int fps = 0;
     while(1)
     {
         fps++;
-        if(handle_input()==false)
+        if(handle_input()==false || quit == true)
         {
             return false;
         }
@@ -57,7 +60,7 @@ bool Editor_mode::run()
  * Returns false if user wants to quit
  */
 
-bool Editor_mode::handle_input()
+bool Main_menu_mode::handle_input()
 {
     gui::Click click;
     click.set_clicked(false);
@@ -115,32 +118,54 @@ bool Editor_mode::handle_input()
  * Editor constructor
  */
 
-Editor_mode::Editor_mode(utility::Configuration * init_config) :
+Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     main_config(init_config),
     grid_speed(atoi(main_config->find_string("grid_speed").c_str())),
     grid_x(0),
     grid_y(0),
-    mode(map_editing),
-    change_mode(false)
+    change_mode(false),
+    quit(false)
 {
-    //create pointers and objects for gui elements
+    //add play button
     gui::Text_button * play_button = new gui::Text_button(main_config,"Play",550,100);
-
     auto play_click_function = [this]()
     {
-        this->change_mode=true;
+        Game_logic::set_current_mode (new Gaming_mode (main_config));
     };
-
-
-
     play_button->init_function(play_click_function);
+
+
+    //add help button
+    gui::Text_button * help_button = new gui::Text_button(main_config,"Help",550,200);
+    auto help_click_function = [this]()
+    {
+        Game_logic::set_current_mode (new Help_mode (main_config));
+    };
+    help_button->init_function(help_click_function);
+
+
+    //add quit button
+    gui::Text_button * quit_button = new gui::Text_button(main_config,"Quit",550,300);
+    auto quit_click_function = [this]()
+    {
+        this->quit=true;
+    };
+    quit_button->init_function(quit_click_function);
+
 
     //add elements to gui manager
     main_gui.add_element(play_button);
+    main_gui.add_element(help_button);
+    main_gui.add_element(quit_button);
 
     // background
     background.change_image(main_config->find_string("main_background").c_str());
 
+}
+
+void Main_menu_mode::stop()
+{
+    change_mode=true;
 }
 
 }//end of game namespace

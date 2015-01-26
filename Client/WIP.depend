@@ -1222,7 +1222,7 @@
 	"../gui/gui_manager.h"
 	"../objects/tile_selection.h"
 
-1419079369 d:\github\word-quiz\client\includes\game\program_mode.h
+1422285489 d:\github\word-quiz\client\includes\game\program_mode.h
 	"../utility/configuration.h"
 
 1419079396 d:\github\word-quiz\client\includes\utility\configuration.h
@@ -1572,7 +1572,7 @@
 1419567978 d:\github\word-quiz\client\includes\gui\click.h
 	<SDL.h>
 
-1421494447 source:d:\github\word-quiz\client\includes\game\game_logic.cpp
+1422286169 source:d:\github\word-quiz\client\includes\game\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -1583,7 +1583,7 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1421491327 d:\github\word-quiz\client\includes\game\game_logic.h
+1422286077 d:\github\word-quiz\client\includes\game\game_logic.h
 	"../video/window.h"
 	"../gui/background.h"
 	"../video/camera.h"
@@ -1607,7 +1607,7 @@
 1420213265 d:\github\word-quiz\client\includes\video\camera.h
 	<SDL.h>
 
-1421493281 d:\github\word-quiz\client\includes\game\gaming_mode.h
+1422287708 d:\github\word-quiz\client\includes\game\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
 
@@ -1615,7 +1615,7 @@
 	<vector>
 	<string>
 
-1421493290 source:d:\github\word-quiz\client\includes\game\gaming_mode.cpp
+1422285607 source:d:\github\word-quiz\client\includes\game\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
 
@@ -1637,8 +1637,9 @@
 	"../utility/configuration.h"
 	<string>
 
-1421493772 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
+1422286711 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
 	"text_button.h"
+	"click.h"
 	<functional>
 	"../video/window.h"
 	"../utility/configuration.h"
@@ -1703,7 +1704,7 @@
 	<memory>
 	<deque>
 
-1421493708 d:\github\word-quiz\client\includes\game\main_menu_mode.h
+1422287708 d:\github\word-quiz\client\includes\game\main_menu_mode.h
 	"program_mode.h"
 	"../gui/text_button.h"
 	"../gui/gui_manager.h"
@@ -1711,8 +1712,11 @@
 	"../utility/timer.h"
 	"../video/window.h"
 
-1421494256 source:d:\github\word-quiz\client\includes\game\main_menu_mode.cpp
+1422287822 source:d:\github\word-quiz\client\includes\game\main_menu_mode.cpp
 	"main_menu_mode.h"
+	"gaming_mode.h"
+	"help_mode.h"
+	"game_logic.h"
 	"../utility/timer.h"
 	"../gui/click.h"
 	<cstdio>
@@ -1725,4 +1729,15 @@
 	<string>
 	<memory>
 	"background.h"
+
+1422287445 d:\github\word-quiz\client\includes\game\help_mode.h
+	"program_mode.h"
+	"../utility/configuration.h"
+	"../utility/timer.h"
+	"../gui/gui_manager.h"
+
+1422287507 source:d:\github\word-quiz\client\includes\game\help_mode.cpp
+	"help_mode.h"
+	"../video/window.h"
+	<cstdio>
 

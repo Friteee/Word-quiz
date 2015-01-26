@@ -26,6 +26,8 @@ class Game_logic{
     static void run();
     // getter of instance of game_logic
     static Game_logic& get_instance();
+    // set the current mode
+    static void set_current_mode(Program_mode * init_mode);
     ~Game_logic();
 
     private:
@@ -42,17 +44,14 @@ class Game_logic{
     static Game_logic* instance;
     // bool to know if the instance was created without errors
     bool is_created;
-    // flag for signaling, if the game should run an editor
-    bool is_editor;
     // event handler
     SDL_Event event;
     // bool to quit out of main loop
     bool quit_program;
-    // tile map
-    Editor_mode editor;
-    // mode for gaming
-    Gaming_mode gaming_mode;
-
+    // current mode
+    Program_mode * current;
+    // program mode marked for deletion
+    Program_mode * previous;
 };
 
 

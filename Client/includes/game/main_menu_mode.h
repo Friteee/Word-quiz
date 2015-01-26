@@ -13,24 +13,17 @@ namespace game
 {
 
 /**
- * Modes of editor modes
- */
-enum Modes_of_editor
-{
-    tile_picker, map_editing
-};
-
-/**
  * Editor mode for main game logic
  */
 
-class Editor_mode : Program_mode
+class Main_menu_mode : public Program_mode
 {
     public :
 
-    Editor_mode(utility::Configuration * init_config);
+    Main_menu_mode(utility::Configuration * init_config);
     bool       run ()override;
     bool       handle_input()override;
+    void       stop()override;
 
     private:
 
@@ -47,11 +40,10 @@ class Editor_mode : Program_mode
     // buffers for speed movement
     double                   grid_x,
                              grid_y;
-    // mode of editor mode
-    // "We know that you like modes, so we've put a mode in your mode"
-    Modes_of_editor          mode;
+    //background
     gui::Background          background;
     bool                     change_mode;
+    bool                     quit;
 };
 
 } // end of game namespace

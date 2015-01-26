@@ -16,6 +16,7 @@ class Program_mode
 
     virtual bool run() = 0;
     virtual bool handle_input() = 0;
+    virtual void stop() = 0;
     virtual ~Program_mode() {}
 
 };
