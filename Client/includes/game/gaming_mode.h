@@ -27,7 +27,6 @@ class Gaming_mode : public Program_mode
     utility::Configuration * main_config;
     // does user wants to change programs mode?
     bool change_mode;
-    bool quit;
 };
 
 }

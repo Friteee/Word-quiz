@@ -22,13 +22,16 @@ class Gui_element
     inline void hide() {visible=false;}
     inline void unhide() {visible=true;}
     inline bool get_visibility(){ return visible;}
+    inline void set_for_deletion() {marked_for_deletion=true;}
+    inline bool is_deleted() {return marked_for_deletion;}
     virtual ~Gui_element(){}
 
     protected :
 
-    SDL_Rect location;
+    SDL_Rect       location;
     video::Texture texture;
-    bool visible;
+    bool           visible,
+                   marked_for_deletion = false;
 
 };
 

@@ -13,7 +13,7 @@ class Text : public Gui_element
 {
     public:
 
-    Text(utility::Configuration * config, std::string init_text , int x , int y, SDL_Color init_color_key);
+    Text(utility::Configuration * config, std::string init_text , int x , int y, int init_text_size, SDL_Color init_color_key);
     void show() override;
     void update() override;
     void change_text(std::string init_text);
@@ -21,8 +21,9 @@ class Text : public Gui_element
     private:
 
     std::string text;
-    TTF_Font * font;
-    SDL_Color color_key;
+    int         text_size;
+    TTF_Font *  font;
+    SDL_Color   color_key;
 
 };
 

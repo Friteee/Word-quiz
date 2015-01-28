@@ -5,6 +5,7 @@
 #include "../utility/configuration.h"
 #include "../utility/timer.h"
 #include "../gui/gui_manager.h"
+#include "../gui/background.h"
 
 namespace game {
 
@@ -21,6 +22,8 @@ private:
     bool                     change_mode;
     int                      fps;
     utility::Timer           fps_timer;
+    SDL_Event                event;
+    gui::Background          main_background;
 };
 
 }//end of game namespace

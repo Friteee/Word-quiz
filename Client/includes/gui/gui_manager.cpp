@@ -25,9 +25,17 @@ void Gui_manager::add_element(Gui_element * added_element)
 
 void Gui_manager::update()
 {
-    for(auto & a : elements)
+    for(int a = 0, b = elements.size() ; a < b ; ++a)
     {
-        a->update();
+        if(elements[a]->is_deleted())
+        {
+            delete elements[a];
+            elements.erase(elements.begin()+a);
+            a--;
+            b--;
+            continue;
+        }
+        elements[a]->update();
     }
 }
 

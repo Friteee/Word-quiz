@@ -8,15 +8,16 @@
 namespace gui
 {
 
-Text::Text(utility::Configuration * config, std::string init_text, int x , int y, SDL_Color init_color_key)
+Text::Text(utility::Configuration * config, std::string init_text, int x , int y, int init_text_size, SDL_Color init_color_key)
 {
     visible = true;
     text = init_text;
+    text_size = init_text_size;
 
     color_key=init_color_key;
     color_key.a=255;
 
-    font = TTF_OpenFont(config->find_string("font").c_str(),48);
+    font = TTF_OpenFont(config->find_string("font").c_str(),text_size);
 
     texture.init(text,color_key,font);
 

@@ -125,6 +125,8 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
 {
     change_mode = false;
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
+
+
 }
 
 void Gaming_mode::stop()
