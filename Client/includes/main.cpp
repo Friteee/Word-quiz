@@ -6,7 +6,8 @@
 using namespace std;
 
 int main(int argc, char* args[])
-try{
+try
+{
     bool error_check;
     if(argc==2)
     {

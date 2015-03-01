@@ -13,7 +13,7 @@ namespace gui
 
 class Click
 {
-    public:
+public:
 
     // determine if user clicked right now
     bool is_clicking();
@@ -27,7 +27,7 @@ class Click
     // set click last frame
     void set_clicked(bool was_clicked);
 
-    private:
+private:
 
     //static to know last click location
     static SDL_Point last_click_location;

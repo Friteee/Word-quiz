@@ -18,14 +18,13 @@ namespace game
 
 class Main_menu_mode : public Program_mode
 {
-    public :
+public :
 
     Main_menu_mode(utility::Configuration * init_config);
     bool       run ()override;
     bool       handle_input()override;
-    void       stop()override;
 
-    private:
+private:
 
     // main configuration
     utility::Configuration * main_config;

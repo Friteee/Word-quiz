@@ -5,7 +5,8 @@
 #include <memory>
 #include "background.h"
 
-namespace gui{
+namespace gui
+{
 
 
 /**

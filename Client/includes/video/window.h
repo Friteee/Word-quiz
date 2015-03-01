@@ -4,16 +4,18 @@
 #include <SDL.h>
 #include "window.h"
 
-namespace video{
+namespace video
+{
 
 /**
  * Singleton pattern used here
  * Class to create video subsystem, which is used to
  * blit stuff to screen
  */
-class Video_subsystem{
+class Video_subsystem
+{
 
-    public:
+public:
 
     // function to initialize video_subsystem
     static bool initialize_subsystem(int width, int height , bool fullscreen);
@@ -41,7 +43,7 @@ class Video_subsystem{
     static void draw_line(int x_1 , int y_1 , int x_2 , int y_2, uint8_t r , uint8_t g, uint8_t b);
 
 
-    private:
+private:
 
     // constructor
     Video_subsystem(int width, int height , bool fullscreen) ;

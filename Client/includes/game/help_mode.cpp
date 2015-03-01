@@ -15,7 +15,6 @@ Help_mode::Help_mode(utility::Configuration * config):
     main_config(config),
     change_mode(false)
 {
-    fps_timer.start();
     main_background.change_image(config->find_string("main_background").c_str());
 
     gui::Text_button * return_button = new gui::Text_button(main_config , "Return" , 100,  600);
@@ -26,8 +25,9 @@ Help_mode::Help_mode(utility::Configuration * config):
     return_button->init_function(return_button_function);
     main_gui.add_element(return_button);
 
-    gui::Text * help_text = new gui::Text(main_config,"Try to gain as much points", 100, 100, 32, SDL_Color{235,235,235});
-    gui::Text * help_text_second = new gui::Text(main_config,"as you can in given period of time!", 100, 150, 32, SDL_Color{235,235,235});
+    gui::Text * help_text = new gui::Text(main_config,"Try to gain as much points", 100, 100, 32, SDL_Color {235,235,235});
+    gui::Text * help_text_second = new gui::Text(main_config,"as you can in given period of time!", 100, 150, 32, SDL_Color {235,235,235});
+
     main_gui.add_element(help_text);
     main_gui.add_element(help_text_second);
 
@@ -35,41 +35,26 @@ Help_mode::Help_mode(utility::Configuration * config):
 
 bool Help_mode::run()
 {
-    while(!change_mode)
+    if(handle_input()==false)
     {
-        fps++;
-        if(handle_input()==false)
-        {
-            return false;
-        }
-        else if(change_mode==true)
-        {
-            return true;
-        }
-        video::Video_subsystem::reload();
-
-        //update
-        main_gui.update();
-
-        //show
-        main_background.show();
-        main_gui.show();
-
-        video::Video_subsystem::update_screen();
-
-        if(fps_timer.get_ticks()>1000)
-        {
-            printf("Current ticks = %i\n",fps);
-            fps=0;
-            fps_timer.reload();
-        }
+        return false;
     }
-    return true;
-}
+    else if(change_mode==true)
+    {
+        return true;
+    }
+    video::Video_subsystem::reload();
 
-void Help_mode::stop()
-{
-    change_mode = true;
+    //update
+    main_gui.update();
+
+    //show
+    main_background.show();
+    main_gui.show();
+
+    video::Video_subsystem::update_screen();
+
+    return true;
 }
 
 bool Help_mode::handle_input()

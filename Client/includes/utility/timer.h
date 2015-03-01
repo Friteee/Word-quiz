@@ -6,7 +6,7 @@ namespace utility
 
 class Timer
 {
-    public:
+public:
 
     Timer();
     // start the timer
@@ -20,7 +20,7 @@ class Timer
     // getter of ticks
     unsigned int get_ticks();
 
-    private:
+private:
 
     // integer to hold current ticks since the start/reload
     unsigned int started_ticks;

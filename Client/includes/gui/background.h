@@ -11,7 +11,8 @@
 
 using namespace std;
 
-namespace gui{
+namespace gui
+{
 
 /**
  * Background class
@@ -23,7 +24,7 @@ namespace gui{
 class Background
 {
 
-    public:
+public:
     //default constructor
     Background();
     // background constructor if we have image location
@@ -47,7 +48,7 @@ class Background
     // method to change image from surface
     void change_image(shared_ptr<SDL_Surface*>copied_surface);
 
-    private:
+private:
 
     video::Texture texture;
     // rectangle to hold location of background

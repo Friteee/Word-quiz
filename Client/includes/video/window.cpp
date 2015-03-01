@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include "window.h"
 
-namespace video {
+namespace video
+{
 
 
 // memory allocation for an instance of video_subsytem

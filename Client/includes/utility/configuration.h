@@ -9,7 +9,7 @@ namespace utility
 
 class Configuration
 {
-    public:
+public:
 
     // initialization of a configuration
     Configuration(std::string filename);
@@ -18,7 +18,7 @@ class Configuration
     // find some variables
     std::vector<std::string> find_strings(std::string searched);
 
-    private:
+private:
 
     // vector of pairs to hold the config
     std::vector<std::pair<std::string,std::string>>config;

@@ -2,8 +2,10 @@
 #define PROGRAM_MODE_H_INCLUDED
 
 #include "../utility/configuration.h"
+#include <SDL.h>
 
-namespace game {
+namespace game
+{
 
 /**
  * Base interface class for program modes
@@ -12,11 +14,10 @@ namespace game {
 
 class Program_mode
 {
-    public:
+public:
 
     virtual bool run() = 0;
     virtual bool handle_input() = 0;
-    virtual void stop() = 0;
     virtual ~Program_mode() {}
 
 };

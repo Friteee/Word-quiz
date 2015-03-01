@@ -19,39 +19,23 @@ namespace game
 
 bool Main_menu_mode::run()
 {
-    fps_timer.start();
-    int fps = 0;
-    while(1)
+
+    if(handle_input()==false || quit == true)
     {
-        fps++;
-        if(handle_input()==false || quit == true)
-        {
-            return false;
-        }
-        else if(change_mode==true)
-        {
-            return true;
-        }
-        video::Video_subsystem::reload();
-
-        //update
-        main_gui.update();
-
-        //show
-        background.show();
-        main_gui.show();
-
-        video::Video_subsystem::update_screen();
-
-
-        if(fps_timer.get_ticks()>1000)
-        {
-            printf("Current ticks = %i\n",fps);
-            fps=0;
-            fps_timer.reload();
-        }
+        return false;
     }
+    video::Video_subsystem::reload();
 
+    //update
+    main_gui.update();
+
+    //show
+    background.show();
+    main_gui.show();
+
+    video::Video_subsystem::update_screen();
+
+    return true;
 }
 
 /**
@@ -161,11 +145,6 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     // background
     background.change_image(main_config->find_string("main_background").c_str());
 
-}
-
-void Main_menu_mode::stop()
-{
-    change_mode=true;
 }
 
 }//end of game namespace

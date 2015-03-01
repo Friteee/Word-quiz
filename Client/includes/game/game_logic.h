@@ -8,7 +8,8 @@
 #include "gaming_mode.h"
 #include "main_menu_mode.h"
 
-namespace game{
+namespace game
+{
 
 
 /**
@@ -16,9 +17,10 @@ namespace game{
  * First thing to be created
  */
 
-class Game_logic{
+class Game_logic
+{
 
-    public:
+public:
 
     // initialization of game_logic
     static bool initialize(const char *);
@@ -30,7 +32,7 @@ class Game_logic{
     static void set_current_mode(Program_mode * init_mode);
     ~Game_logic();
 
-    private:
+private:
     // configuration
     utility::Configuration main_config;
     int width,
@@ -52,6 +54,7 @@ class Game_logic{
     Program_mode * current;
     // program mode marked for deletion
     Program_mode * previous;
+
 };
 
 

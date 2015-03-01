@@ -15,18 +15,33 @@ namespace gui
 
 class Gui_element
 {
-    public:
+public:
 
     virtual void show() = 0;
     virtual void update() = 0;
-    inline void hide() {visible=false;}
-    inline void unhide() {visible=true;}
-    inline bool get_visibility(){ return visible;}
-    inline void set_for_deletion() {marked_for_deletion=true;}
-    inline bool is_deleted() {return marked_for_deletion;}
-    virtual ~Gui_element(){}
+    inline void hide()
+    {
+        visible=false;
+    }
+    inline void unhide()
+    {
+        visible=true;
+    }
+    inline bool get_visibility()
+    {
+        return visible;
+    }
+    inline void set_for_deletion()
+    {
+        marked_for_deletion=true;
+    }
+    inline bool is_deleted()
+    {
+        return marked_for_deletion;
+    }
+    virtual ~Gui_element() {}
 
-    protected :
+protected :
 
     SDL_Rect       location;
     video::Texture texture;

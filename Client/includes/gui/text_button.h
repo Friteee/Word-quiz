@@ -10,7 +10,7 @@ namespace gui
 
 class Text_button : public Gui_element
 {
-    public:
+public:
 
     Text_button(utility::Configuration * config, std::string init_text , int x , int y);
     void show()override;
@@ -19,7 +19,7 @@ class Text_button : public Gui_element
     void change_text(std::string init_text);
     ~Text_button();
 
-    private:
+private:
 
     // function, which is being called every time user clicks a button
     std::function<void()> on_click;

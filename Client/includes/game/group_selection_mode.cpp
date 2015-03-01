@@ -1,15 +1,15 @@
 
-#include "gaming_mode.h"
+#include "group_selection_mode.h"
 #include "game_logic.h"
 
 namespace game
 {
 
 /**
- * Gaming mode's input handler
+ * Group_selection's input handler
  */
 
-bool Gaming_mode::handle_input()
+bool Group_selection_mode::handle_input()
 {
     while(SDL_PollEvent(&event))
     {
@@ -58,9 +58,8 @@ bool Gaming_mode::handle_input()
             break;
 
         }
+
     }
-
-
     const Uint8 * key_states =SDL_GetKeyboardState(nullptr);
 
     // if alt + tab was pressed
@@ -69,17 +68,15 @@ bool Gaming_mode::handle_input()
         // minimize the window
         video::Video_subsystem::minimize();
     }
-
     return true;
 }
 
 /**
- * Gaming mode's game loop
+ * Group selection mode's game loop
  */
 
-bool Gaming_mode::run()
+bool Group_selection_mode::run()
 {
-
     // handle that input
     if(handle_input()==false)
     {
@@ -87,10 +84,10 @@ bool Gaming_mode::run()
     }
     // reload video subsystem
     video::Video_subsystem::reload();
-
     // main logic here
     main_background->show();
     video::Video_subsystem::update_screen();
+    // check the fps and sleep the necessary time
 
     return true;
 }
@@ -99,15 +96,13 @@ bool Gaming_mode::run()
  * Constructor
  */
 
-Gaming_mode::Gaming_mode(utility::Configuration * init_config):
+Group_selection_mode::Group_selection_mode(utility::Configuration * init_config):
     main_config(init_config)
 {
-    change_mode = false;
+
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
 
 
 }
-
-
 
 }

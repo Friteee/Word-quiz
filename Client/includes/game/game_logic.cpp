@@ -86,9 +86,31 @@ Game_logic::Game_logic():
 
 void Game_logic::run()
 {
+    unsigned int fps_cap = atoi(instance->main_config.find_string("fps_cap").c_str());
+    bool fps_cap_enabled = instance->main_config.find_string("fps_cap_enabled").c_str()==string("true");
+
+    // timers to enable sleeping and count of fps
+    utility::Timer sleep_timer;
+    utility::Timer fps_timer;
+    fps_timer.start();
+    sleep_timer.start();
+    // integer for fps, overflow is unlikely :)
+    unsigned int fps=0;
+
     while(instance->current->run())
     {
-
+        fps++;
+        if(fps_timer.get_ticks()>1000)
+        {
+            printf("Current fps = %i \n",fps);
+            fps_timer.reload();
+            fps=0;
+        }
+        if(sleep_timer.get_ticks()<1000/fps_cap&&fps_cap_enabled)
+        {
+            SDL_Delay(1000/fps_cap-sleep_timer.get_ticks());
+        }
+        sleep_timer.reload();
     }
 }
 
@@ -107,8 +129,6 @@ Game_logic::~Game_logic()
 
 void Game_logic::set_current_mode(Program_mode * init_mode)
 {
-    // stop current instance from running
-    instance->current->stop();
     // delete previous instance
     delete instance->previous;
     // current program mode instance is now previous instance

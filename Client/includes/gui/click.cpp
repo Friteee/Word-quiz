@@ -1,6 +1,5 @@
 
 
-
 #include "click.h"
 
 namespace gui
@@ -8,7 +7,7 @@ namespace gui
 
 bool Click::clicked_last_frame = false;
 
-SDL_Point Click::last_click_location=SDL_Point{0,0};
+SDL_Point Click::last_click_location=SDL_Point {0,0};
 
 
 bool Click::has_clicked(SDL_Rect & location)

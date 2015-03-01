@@ -4,7 +4,8 @@
 #include<vector>
 #include<string>
 
-namespace utility{
+namespace utility
+{
 
 // function to extract variables from a string
 // variables here should be separated with a character

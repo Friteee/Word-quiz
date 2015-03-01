@@ -1,5 +1,4 @@
 
-
 #include "texture.h"
 #include "window.h"
 #include <assert.h>
@@ -187,7 +186,7 @@ Texture::~Texture()
 {
     if(surface.unique())
     {
-       SDL_FreeSurface(*surface);
+        SDL_FreeSurface(*surface);
     }
     if(texture.unique())
     {

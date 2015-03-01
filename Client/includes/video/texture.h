@@ -16,7 +16,7 @@ namespace video
 class Texture
 {
 
-    public:
+public:
     Texture();
     Texture(const Texture & copied);
     Texture& operator=(const Texture & copied);
@@ -32,7 +32,7 @@ class Texture
     unsigned int get_height();
     ~Texture();
 
-    private:
+private:
 
     std::shared_ptr<SDL_Surface*> surface;
     std::shared_ptr<SDL_Texture*> texture;

@@ -9,7 +9,7 @@ namespace gui
 
 class Gui_manager : Gui_element
 {
-    public:
+public:
 
     void add_element(Gui_element * added_element);
     void update()override;
@@ -24,7 +24,7 @@ class Gui_manager : Gui_element
     Gui_manager(Gui_manager && moved_object) = delete ;
     Gui_manager& operator=(Gui_manager&& moved_object) = delete ;
 
-    private:
+private:
 
     std::vector< Gui_element * > elements;
     bool visible = true;

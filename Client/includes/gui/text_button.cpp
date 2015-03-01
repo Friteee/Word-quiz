@@ -1,4 +1,3 @@
-
 #include "text_button.h"
 #include "click.h"
 #include <functional>
