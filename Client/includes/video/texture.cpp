@@ -41,6 +41,10 @@ void Texture::init(std::string filename)
         printf("Error code : %s\n",SDL_GetError());
         assert(1);
     }
+    else
+    {
+        SDL_SetTextureBlendMode(*texture,SDL_BLENDMODE_BLEND);
+    }
 }
 
 /**
@@ -73,6 +77,10 @@ void Texture::init(std::string filename, SDL_Color color_key)
         printf("Error code : %s\n",SDL_GetError());
         assert(1);
     }
+    else
+    {
+        SDL_SetTextureBlendMode(*texture,SDL_BLENDMODE_BLEND);
+    }
 }
 
 /**
@@ -100,6 +108,10 @@ void Texture::init(SDL_Surface * init_surface)
         printf("Error code : %s\n",SDL_GetError());
         assert(1);
     }
+    else
+    {
+        SDL_SetTextureBlendMode(*texture,SDL_BLENDMODE_BLEND);
+    }
 }
 
 /**
@@ -122,6 +134,10 @@ void Texture::init(std::string text, SDL_Color text_color, TTF_Font * font)
         printf("Possible causes - No renderer present \n");
         printf("Error code : %s\n",SDL_GetError());
         assert(1);
+    }
+    else
+    {
+        SDL_SetTextureBlendMode(*texture,SDL_BLENDMODE_BLEND);
     }
 }
 
@@ -206,6 +222,12 @@ unsigned int Texture::get_width()
     return (*surface)->w;
 }
 
+void Texture::set_alpha(unsigned int alpha)
+{
+    if(alpha>255)
+        printf("Warning! Alpha passed to texture is more than 255");
+    SDL_SetTextureAlphaMod(*texture, alpha);
+}
 
 
 }// end of video namespace

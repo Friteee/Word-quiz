@@ -2,7 +2,7 @@
 #include "gaming_mode.h"
 #include "game_logic.h"
 
-namespace game
+namespace main_logic
 {
 
 /**
@@ -110,4 +110,4 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
 
 
 
-}
+}//end of main_logic namespace

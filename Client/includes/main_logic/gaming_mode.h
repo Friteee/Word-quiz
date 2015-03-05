@@ -5,7 +5,7 @@
 #include "../gui/background.h"
 
 
-namespace game
+namespace main_logic
 {
 
 class Gaming_mode : public Program_mode

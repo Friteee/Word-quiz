@@ -2,7 +2,7 @@
 #include "group_selection_mode.h"
 #include "game_logic.h"
 
-namespace game
+namespace main_logic
 {
 
 /**
@@ -97,12 +97,12 @@ bool Group_selection_mode::run()
  */
 
 Group_selection_mode::Group_selection_mode(utility::Configuration * init_config):
-    main_config(init_config)
+    main_config(init_config),
+    groups(std::string("./config/")+main_config->find_string("group_config"))
 {
 
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
 
-
 }
 
-}
+}// end of main_logic namespace

@@ -4,6 +4,8 @@
 #include "../video/window.h"
 #include "../utility/configuration.h"
 #include "../utility/functions.h"
+#include "../utility/timer.h"
+#include "../game/animation.h"
 #include <vector>
 #include <cstdio>
 
@@ -34,6 +36,11 @@ Text_button::Text_button(utility::Configuration * config , std::string init_text
 
     texture.init(text,color,font);
 
+    auto object_function = [int alpha, &texture](utility::Timer timer)
+    {
+
+    };
+
     location.x = x;
     location.y = y;
     location.w = texture.get_width();
@@ -57,7 +64,6 @@ void Text_button::show()
 {
     if(!visible)
     {
-        printf("zx");
         return;
     }
     video::Video_subsystem::blit(texture.get_texture(),nullptr,&location);

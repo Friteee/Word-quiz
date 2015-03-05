@@ -18,14 +18,15 @@ class Texture
 
 public:
     Texture();
-    Texture(const Texture & copied);
+    Texture           (const Texture & copied);
     Texture& operator=(const Texture & copied);
-    Texture(Texture && moved);
+    Texture           (Texture && moved);
     Texture& operator=(Texture && moved);
     void         init(std::string filename);
     void         init(std::string filename, SDL_Color color_key);
     void         init(SDL_Surface * init_surface);
     void         init(std::string text, SDL_Color text_color , TTF_Font * font);
+    void         set_alpha(unsigned int alpha);
     SDL_Texture* get_texture();
     SDL_Surface* get_surface();
     unsigned int get_width();

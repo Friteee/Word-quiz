@@ -7,7 +7,7 @@
 #include "../gui/gui_manager.h"
 #include "../gui/background.h"
 
-namespace game
+namespace main_logic
 {
 
 class Help_mode : public Program_mode
@@ -24,6 +24,6 @@ private:
     gui::Background          main_background;
 };
 
-}//end of game namespace
+}//end of main_logic namespace
 
 #endif // HELP_MODE_H_INCLUDED

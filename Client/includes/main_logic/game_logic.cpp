@@ -9,7 +9,7 @@
 #include "../utility/configuration.h"
 #include <cstdlib>
 
-namespace game
+namespace main_logic
 {
 
 // defines for width , height AND FPS
@@ -137,5 +137,5 @@ void Game_logic::set_current_mode(Program_mode * init_mode)
     instance->current = init_mode;
 }
 
-}// end of namespace game
+}// end of namespace main_logic
 

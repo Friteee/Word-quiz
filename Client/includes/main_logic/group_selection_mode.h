@@ -3,9 +3,10 @@
 
 #include "program_mode.h"
 #include "../gui/background.h"
+#include "../gui/list.h"
 
 
-namespace game
+namespace main_logic
 {
 
 class Group_selection_mode : public Program_mode
@@ -24,6 +25,8 @@ private:
     SDL_Event event;
     // configuration
     utility::Configuration * main_config;
+    // config for groups
+    utility::Configuration groups;
 };
 
 }

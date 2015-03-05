@@ -39,6 +39,14 @@ public:
     {
         return marked_for_deletion;
     }
+    inline int get_height()
+    {
+        return texture.get_height();
+    }
+    inline int get_width()
+    {
+        return texture.get_width();
+    }
     virtual ~Gui_element() {}
 
 protected :

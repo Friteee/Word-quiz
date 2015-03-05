@@ -8,7 +8,7 @@
 #include "gaming_mode.h"
 #include "main_menu_mode.h"
 
-namespace game
+namespace main_logic
 {
 
 

@@ -9,7 +9,7 @@
 #include "../video/window.h"
 
 
-namespace game
+namespace main_logic
 {
 
 /**
@@ -45,6 +45,6 @@ private:
     bool                     quit;
 };
 
-} // end of game namespace
+} // end of main_logic namespace
 
 #endif // EDITOR_MODE_H_INCLUDED

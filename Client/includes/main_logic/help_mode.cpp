@@ -8,7 +8,7 @@
 #include "main_menu_mode.h"
 #include <cstdio>
 
-namespace game
+namespace main_logic
 {
 
 Help_mode::Help_mode(utility::Configuration * config):
@@ -111,4 +111,4 @@ bool Help_mode::handle_input()
     return true;
 }
 
-}//end of game namespace
+}//end of main_logic namespace

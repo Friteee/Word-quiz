@@ -1,6 +1,6 @@
 #include <SDL.h>
 #include "video/window.h"
-#include "game/game_logic.h"
+#include "main_logic/game_logic.h"
 #include <stdio.h>
 
 using namespace std;
@@ -11,11 +11,11 @@ try
     bool error_check;
     if(argc==2)
     {
-        error_check = game::Game_logic::initialize(args[1]);
+        error_check = main_logic::Game_logic::initialize(args[1]);
     }
     else
     {
-        error_check = game::Game_logic::initialize(nullptr);
+        error_check = main_logic::Game_logic::initialize(nullptr);
     }
     if(error_check==false)
     {
@@ -25,7 +25,7 @@ try
     {
         printf("Game is initialized\n");
     }
-    game::Game_logic::run();
+    main_logic::Game_logic::run();
     return 0;
 }
 catch (exception e)

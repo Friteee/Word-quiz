@@ -4,7 +4,7 @@
 #include "../utility/configuration.h"
 #include <SDL.h>
 
-namespace game
+namespace main_logic
 {
 
 /**
@@ -23,6 +23,6 @@ public:
 };
 
 
-} // end of gaming namespace
+} // end of main_logic namespace
 
 #endif // PROGRAM_MODE_H_INCLUDED
