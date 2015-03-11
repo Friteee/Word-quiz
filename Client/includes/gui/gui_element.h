@@ -19,6 +19,10 @@ public:
 
     virtual void show() = 0;
     virtual void update() = 0;
+    virtual void handle_click(int x, int y)= 0 ;
+
+    //inline functions
+
     inline void hide()
     {
         visible=false;
@@ -39,13 +43,10 @@ public:
     {
         return marked_for_deletion;
     }
-    inline int get_height()
+    inline void change_position(int x, int y)
     {
-        return texture.get_height();
-    }
-    inline int get_width()
-    {
-        return texture.get_width();
+        location.x=x;
+        location.y=y;
     }
     virtual ~Gui_element() {}
 

@@ -9,25 +9,9 @@ bool Click::clicked_last_frame = false;
 
 SDL_Point Click::last_click_location=SDL_Point {0,0};
 
-
-bool Click::has_clicked(SDL_Rect & location)
+bool Click::has_clicked()
 {
-    if(!Click::clicked_last_frame)
-    {
-        return false;
-    }
-    else if(Click::last_click_location.x>location.x&&Click::last_click_location.x<location.x+location.w&&
-            Click::last_click_location.y>location.y&&Click::last_click_location.y<location.y+location.h)
-    {
-        return true;
-    }
-    else
-        return false;
-}
-
-bool Click::is_clicking()
-{
-    return SDL_GetMouseState(nullptr, nullptr) & SDL_BUTTON(SDL_BUTTON_LEFT);
+    return Click::clicked_last_frame;
 }
 
 void Click::set_clicked(bool was_clicked)
@@ -39,6 +23,12 @@ void Click::set_location(int x, int y)
 {
     Click::last_click_location.x = x;
     Click::last_click_location.y = y;
+}
+
+void Click::get_location(int & x, int & y)
+{
+    x = Click::last_click_location.x;
+    y = Click::last_click_location.y;
 }
 
 }// end of gui namespace

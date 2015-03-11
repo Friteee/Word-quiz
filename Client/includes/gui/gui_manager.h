@@ -7,13 +7,14 @@
 namespace gui
 {
 
-class Gui_manager : Gui_element
+class Gui_manager
 {
 public:
 
     void add_element(Gui_element * added_element);
-    void update()override;
-    void show()override;
+    void update();
+    void show();
+    void handle_click(int x, int y);
 
 
     Gui_manager();

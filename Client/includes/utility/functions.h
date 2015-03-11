@@ -11,5 +11,7 @@ namespace utility
 // variables here should be separated with a character
 extern std::vector<int> get_numbers_from_string(std::string searched);
 
+extern std::vector<std::string> get_separated_strings(std::string searched);
+
 }
 #endif // FUNCTIONS_H_INCLUDED

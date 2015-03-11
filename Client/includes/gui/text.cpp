@@ -41,12 +41,22 @@ void Text::update()
 
 }
 
+Text::~Text()
+{
+    TTF_CloseFont(font);
+}
+
 void Text::change_text(std::string init_text)
 {
     text = init_text;
     texture.init(init_text,color_key,font);
     location.w = texture.get_width();
     location.h = texture.get_height();
+}
+
+void Text::handle_click(int x, int y)
+{
+
 }
 
 }// end of namespace gui

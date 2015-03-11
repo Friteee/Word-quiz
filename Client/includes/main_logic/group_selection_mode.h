@@ -3,7 +3,6 @@
 
 #include "program_mode.h"
 #include "../gui/background.h"
-#include "../gui/list.h"
 
 
 namespace main_logic

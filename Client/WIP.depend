@@ -1230,12 +1230,13 @@
 	<string>
 	<vector>
 
-1425583553 d:\github\word-quiz\client\includes\gui\text_button.h
+1426067303 d:\github\word-quiz\client\includes\gui\text_button.h
 	"gui_element.h"
 	<functional>
+	"../game/animation.h"
 	"../utility/configuration.h"
 
-1425582545 d:\github\word-quiz\client\includes\gui\gui_element.h
+1426067149 d:\github\word-quiz\client\includes\gui\gui_element.h
 	<SDL.h>
 	"../video/texture.h"
 
@@ -1564,13 +1565,13 @@
 	"../utility/configuration.h"
 	"gui_element.h"
 
-1425226044 d:\github\word-quiz\client\includes\gui\gui_manager.h
+1426067625 d:\github\word-quiz\client\includes\gui\gui_manager.h
 	"gui_element.h"
 	<vector>
 
 1425226077 d:\github\word-quiz\client\includes\utility\timer.h
 
-1425226052 d:\github\word-quiz\client\includes\gui\click.h
+1426068426 d:\github\word-quiz\client\includes\gui\click.h
 	<SDL.h>
 
 1425225615 source:d:\github\word-quiz\client\includes\game\game_logic.cpp
@@ -1612,7 +1613,7 @@
 	"program_mode.h"
 	"../gui/background.h"
 
-1425226074 d:\github\word-quiz\client\includes\utility\functions.h
+1426070328 d:\github\word-quiz\client\includes\utility\functions.h
 	<vector>
 	<string>
 
@@ -1620,31 +1621,33 @@
 	"gaming_mode.h"
 	"game_logic.h"
 
-1425225927 source:d:\github\word-quiz\client\includes\gui\click.cpp
+1426068426 source:d:\github\word-quiz\client\includes\gui\click.cpp
 	"click.h"
 
-1422446268 source:d:\github\word-quiz\client\includes\gui\gui_manager.cpp
+1426068932 source:d:\github\word-quiz\client\includes\gui\gui_manager.cpp
 	"gui_manager.h"
+	"click.h"
+	<cstdio>
 
-1425584634 source:d:\github\word-quiz\client\includes\gui\text.cpp
+1426067590 source:d:\github\word-quiz\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
 	"../video/window.h"
 	<cstdio>
 
-1425226036 d:\github\word-quiz\client\includes\gui\text.h
+1426067284 d:\github\word-quiz\client\includes\gui\text.h
 	"text.h"
 	"gui_element.h"
 	"../utility/configuration.h"
 	<string>
 
-1425583557 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
+1426068692 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
 	"text_button.h"
-	"click.h"
 	<functional>
 	"../video/window.h"
 	"../utility/configuration.h"
 	"../utility/functions.h"
+	"../utility/timer.h"
 	<vector>
 	<cstdio>
 
@@ -1671,7 +1674,7 @@
 	<string>
 	<vector>
 
-1419250923 source:d:\github\word-quiz\client\includes\utility\functions.cpp
+1426070625 source:d:\github\word-quiz\client\includes\utility\functions.cpp
 	<sstream>
 	<vector>
 
@@ -1799,12 +1802,11 @@
 	"group_selection_mode.h"
 	"game_logic.h"
 
-1425584400 d:\github\word-quiz\client\includes\main_logic\group_selection_mode.h
+1426068468 d:\github\word-quiz\client\includes\main_logic\group_selection_mode.h
 	"program_mode.h"
 	"../gui/background.h"
-	"../gui/list.h"
 
-1425584400 source:d:\github\word-quiz\client\includes\main_logic\help_mode.cpp
+1426068394 source:d:\github\word-quiz\client\includes\main_logic\help_mode.cpp
 	"help_mode.h"
 	"../video/window.h"
 	"../gui/click.h"
@@ -1821,7 +1823,7 @@
 	"../gui/gui_manager.h"
 	"../gui/background.h"
 
-1425584400 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
+1426068725 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
 	"main_menu_mode.h"
 	"group_selection_mode.h"
 	"help_mode.h"
@@ -1834,7 +1836,7 @@
 1425584238 source:d:\github\word-quiz\client\includes\gui\list.cpp
 	"list.h"
 
-1425584185 d:\github\word-quiz\client\includes\gui\list.h
+1426067263 d:\github\word-quiz\client\includes\gui\list.h
 	"gui_element.h"
 	<vector>
 
@@ -1844,4 +1846,21 @@
 1425584907 d:\github\word-quiz\client\includes\game\animation.h
 	<functional>
 	"../utility/timer.h"
+
+1426069612 source:d:\github\word-quiz\client\includes\gui\button_list.cpp
+	"button_list.h"
+
+1426069072 d:\github\word-quiz\client\includes\gui\button_list.h
+	"gui_element.h"
+	"text_button.h"
+	<vector>
+
+1426070291 source:d:\github\word-quiz\client\includes\game\word_group.cpp
+	"word_group.h"
+
+1426069589 d:\github\word-quiz\client\includes\game\word_group.h
+	"../utility/configuration.h"
+	"../video/texture.h"
+	<string>
+	<vector>
 

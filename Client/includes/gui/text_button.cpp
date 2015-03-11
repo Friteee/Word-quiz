@@ -1,11 +1,9 @@
 #include "text_button.h"
-#include "click.h"
 #include <functional>
 #include "../video/window.h"
 #include "../utility/configuration.h"
 #include "../utility/functions.h"
 #include "../utility/timer.h"
-#include "../game/animation.h"
 #include <vector>
 #include <cstdio>
 
@@ -36,10 +34,6 @@ Text_button::Text_button(utility::Configuration * config , std::string init_text
 
     texture.init(text,color,font);
 
-    auto object_function = [int alpha, &texture](utility::Timer timer)
-    {
-
-    };
 
     location.x = x;
     location.y = y;
@@ -76,25 +70,12 @@ void Text_button::show()
 
 void Text_button::update()
 {
-    Click left_click;
-    if(!visible)
-    {
-        return;
-    }
 
-    if(left_click.has_clicked(location))
-    {
-        if(on_click)
-            on_click();
-        else
-            printf("Warning : no function specified for a button\n");
-        is_clicked=false;
-    }
 }
 
 Text_button::~Text_button()
 {
-
+    TTF_CloseFont(font);
 }
 
 void Text_button::change_text(std::string init_text)
@@ -103,6 +84,18 @@ void Text_button::change_text(std::string init_text)
     texture.init(text,color,font);
     location.w = texture.get_width();
     location.h = texture.get_height();
+}
+
+void Text_button::handle_click(int x, int y)
+{
+    if(visible && x > location.x && x < location.x + location.w && y > location.y && y < location.y + location.h)
+    {
+        if(on_click)
+            on_click();
+        else
+            printf("Warning : no function specified for a button\n");
+        is_clicked=false;
+    }
 }
 
 }

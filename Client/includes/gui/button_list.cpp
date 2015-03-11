@@ -1,9 +1,9 @@
-#include "list.h"
+#include "button_list.h"
 
 namespace gui
 {
 
-template <typename Element> void List<Element>::update()
+void Button_list::update()
 {
     for(auto element : elements)
     {
@@ -11,13 +11,15 @@ template <typename Element> void List<Element>::update()
     }
 }
 
-template <typename Element> void List<Element>::show()
+void Button_list::show()
 {
     for(auto element : elements)
     {
         element->show();
     }
 }
+
+
 
 
 

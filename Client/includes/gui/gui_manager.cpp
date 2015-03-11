@@ -1,6 +1,8 @@
 
 
 #include "gui_manager.h"
+#include "click.h"
+#include <cstdio>
 
 namespace gui
 {
@@ -25,6 +27,7 @@ void Gui_manager::add_element(Gui_element * added_element)
 
 void Gui_manager::update()
 {
+    gui::Click click;
     for(int a = 0, b = elements.size() ; a < b ; ++a)
     {
         if(elements[a]->is_deleted())
@@ -35,7 +38,17 @@ void Gui_manager::update()
             b--;
             continue;
         }
+
+        if(click.has_clicked())
+        {
+            int x , y;
+
+            click.get_location(x,y);
+
+            elements[a]->handle_click(x,y);
+        }
         elements[a]->update();
+
     }
 }
 
@@ -46,5 +59,4 @@ void Gui_manager::show()
         a->show();
     }
 }
-
 }//end of gui namespace

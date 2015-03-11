@@ -15,14 +15,13 @@ class Click
 {
 public:
 
-    // determine if user clicked right now
-    bool is_clicking();
-
     // determine if user has clicked that rectangle last frame and released the button
-    bool has_clicked(SDL_Rect & location);
+    bool has_clicked();
 
     //set last click's location
     void set_location(int x , int y);
+
+    void get_location(int & x, int & y);
 
     // set click last frame
     void set_clicked(bool was_clicked);

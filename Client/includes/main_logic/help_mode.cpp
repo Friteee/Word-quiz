@@ -108,6 +108,8 @@ bool Help_mode::handle_input()
         video::Video_subsystem::minimize();
     }
 
+
+
     return true;
 }
 
