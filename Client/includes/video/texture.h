@@ -35,6 +35,9 @@ public:
 
 private:
 
+    void create_surface(std::string filename);
+    void create_texture(std::string filename);
+    void reset();
     std::shared_ptr<SDL_Surface*> surface;
     std::shared_ptr<SDL_Texture*> texture;
 };

@@ -1,5 +1,5 @@
-#ifndef GAMING_MODE_H_INCLUDED
-#define GAMING_MODE_H_INCLUDED
+#ifndef GROUP_SELECTION_MODE_H_INCLUDED
+#define GROUP_SELECTION_MODE_H_INCLUDED
 
 #include "program_mode.h"
 #include "../gui/background.h"

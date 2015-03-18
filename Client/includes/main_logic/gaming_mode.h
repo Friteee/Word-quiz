@@ -3,7 +3,9 @@
 
 #include "program_mode.h"
 #include "../gui/background.h"
-
+#include "../game/word_group.h"
+#include "../video/texture.h"
+#include <string>
 
 namespace main_logic
 {
@@ -19,13 +21,19 @@ public :
 private:
 
     // background
-    gui::Background * main_background;
+    gui::Background        * main_background;
     // event
-    SDL_Event event;
+    SDL_Event                event;
     // configuration
     utility::Configuration * main_config;
     // does user wants to change programs mode?
-    bool change_mode;
+    bool                     change_mode;
+    // word group
+    game::Word_group         main_group;
+    // word we are trying to guess
+    std::string              word;
+    // texture of the word
+    video::Texture           word_image;
 
 };
 

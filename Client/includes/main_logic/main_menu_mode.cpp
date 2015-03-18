@@ -3,8 +3,9 @@
 #include "main_menu_mode.h"
 #include "group_selection_mode.h"
 #include "help_mode.h"
+#include "gaming_mode.h"
 #include "game_logic.h"
-#include "../utility/timer.h"
+#include "../utility/stopwatch.h"
 #include "../gui/click.h"
 #include <cstdio>
 #include <cmath>
@@ -28,6 +29,7 @@ bool Main_menu_mode::run()
 
     //update
     main_gui.update();
+
 
     //show
     background.show();
@@ -114,7 +116,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     gui::Text_button * play_button = new gui::Text_button(main_config,"Play",550,100);
     auto play_click_function = [this]()
     {
-        Game_logic::set_current_mode (new Group_selection_mode(main_config));
+        Game_logic::set_current_mode (new Gaming_mode (main_config) );
     };
     play_button->init_function(play_click_function);
 
@@ -123,7 +125,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     gui::Text_button * help_button = new gui::Text_button(main_config,"Help",550,200);
     auto help_click_function = [this]()
     {
-        Game_logic::set_current_mode (new Help_mode (main_config));
+        Game_logic::set_current_mode (new Help_mode (main_config) );
     };
     help_button->init_function(help_click_function);
 

@@ -87,6 +87,8 @@
 		<Unit filename="includes/utility/configuration.h" />
 		<Unit filename="includes/utility/functions.cpp" />
 		<Unit filename="includes/utility/functions.h" />
+		<Unit filename="includes/utility/stopwatch.cpp" />
+		<Unit filename="includes/utility/stopwatch.h" />
 		<Unit filename="includes/utility/timer.cpp" />
 		<Unit filename="includes/utility/timer.h" />
 		<Unit filename="includes/video/texture.cpp" />

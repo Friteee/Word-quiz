@@ -1,6 +1,7 @@
 
 #include "gaming_mode.h"
 #include "game_logic.h"
+#include <cstdlib>
 
 namespace main_logic
 {
@@ -43,6 +44,14 @@ bool Gaming_mode::handle_input()
             }
             break;
         case SDL_MOUSEBUTTONDOWN:
+            {
+                if(main_group.get_size() == 0)
+                    continue;
+                int index = rand() % main_group.get_size();
+                word = main_group.get_word(index);
+                word_image = main_group.get_texture(index);
+                main_group.delete_word(index);
+            }
 
             break;
         case SDL_WINDOWEVENT:
@@ -88,8 +97,19 @@ bool Gaming_mode::run()
     // reload video subsystem
     video::Video_subsystem::reload();
 
+
     // main logic here
     main_background->show();
+
+    SDL_Rect blit_location ;
+
+    blit_location.w = video::Video_subsystem::get_width()/4;
+    blit_location.h = video::Video_subsystem::get_width()/4;
+    blit_location.x = video::Video_subsystem::get_width()/2 - video::Video_subsystem::get_width()/8;
+    blit_location.y = video::Video_subsystem::get_height()/2 - 300;
+
+    video::Video_subsystem::blit(word_image.get_texture() , nullptr , &blit_location);
+
     video::Video_subsystem::update_screen();
 
     return true;
@@ -100,11 +120,17 @@ bool Gaming_mode::run()
  */
 
 Gaming_mode::Gaming_mode(utility::Configuration * init_config):
-    main_config(init_config)
+    main_config(init_config),
+    main_group( utility::Configuration("config/groups/banana.cfg"))
 {
     change_mode = false;
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
+    srand(SDL_GetTicks());
 
+    int index = rand() % main_group.get_size();
+    word = main_group.get_word(index);
+    word_image = main_group.get_texture(index);
+    main_group.delete_word(index);
 
 }
 

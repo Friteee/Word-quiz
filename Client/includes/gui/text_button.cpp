@@ -3,7 +3,7 @@
 #include "../video/window.h"
 #include "../utility/configuration.h"
 #include "../utility/functions.h"
-#include "../utility/timer.h"
+#include "../utility/stopwatch.h"
 #include <vector>
 #include <cstdio>
 

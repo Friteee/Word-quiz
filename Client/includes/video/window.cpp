@@ -170,6 +170,20 @@ void Video_subsystem::draw_line(int x_1 , int y_1 , int x_2 , int y_2,
     return;
 }
 
+int Video_subsystem::get_height()
+{
+    int height,width;
+    SDL_GetWindowSize(instance->main_window , &width, &height);
+    return height;
+}
+
+int Video_subsystem::get_width()
+{
+    int height,width;
+    SDL_GetWindowSize(instance->main_window , &width, &height);
+    return width;
+}
+
 }// end of namespace
 
 #endif // WINDOW

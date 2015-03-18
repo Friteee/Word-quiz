@@ -1,6 +1,6 @@
 
 #include <functional>
-#include "../utility/timer.h"
+#include "../utility/stopwatch.h"
 
 
 namespace game
@@ -15,13 +15,13 @@ class Animation
 {
 public:
 
-    Animation(std::function  <void(utility::Timer)> );
+    Animation(std::function  <void(utility::Stopwatch)> );
     void update();
 
 private:
 
-    utility::Timer timer;
-    std::function  <void(utility::Timer)> object_function;
+    utility::Stopwatch stopwatch;
+    std::function  <void(utility::Stopwatch)> object_function;
 
 };
 

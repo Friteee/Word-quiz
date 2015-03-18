@@ -5,7 +5,7 @@
 #include "../gui/text_button.h"
 #include "../gui/gui_manager.h"
 #include "../gui/background.h"
-#include "../utility/timer.h"
+#include "../utility/stopwatch.h"
 #include "../video/window.h"
 
 
@@ -31,7 +31,7 @@ private:
     // event
     SDL_Event                event;
     // timers to handle fps and grid movement
-    utility::Timer           fps_timer;
+    utility::Stopwatch       fps_stopwatch;
     // gui manager
     gui::Gui_manager         main_gui;
     // speed of the grid

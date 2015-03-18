@@ -1,81 +1,34 @@
+
 #include "timer.h"
-#include <SDL.h>
 
 namespace utility
 {
 
-/**
- *  Timer constructor
- */
-Timer::Timer()
+void Timer::set_timer(unsigned int init_time)
 {
-    started_ticks=SDL_GetTicks();
-    paused_ticks=0;
-    paused=false;
-    started=false;
+    time = init_time;
 }
 
-/**
- * Function to get ticks from the last time timer was used
- * Ticks are returned as milliseconds, so be cautious when using timer for seconds
- */
-unsigned int Timer::get_ticks()
+// set function
+void Timer::set_function(std::function<void()> init_function)
 {
-    if(!started)
-    {
-        return 0;
-    }
-    else if(paused)
-    {
-        return paused_ticks-started_ticks;
-    }
-    else
-    {
-        return SDL_GetTicks()-started_ticks;
+    script = init_function;
+}
+// update the timer to see if
+void Timer::update()
+{
+    if(started && stopwatch.get_ticks() > time){
+        if(script)
+            script();
+        else
+            printf("Warning : no function specified for timer\n");
     }
 }
 
-/**
- * Function to start the timer
- */
 void Timer::start()
 {
-    if(paused==false)
-    {
-        started_ticks=SDL_GetTicks();
-        started=true;
-    }
-    else
-    {
-        paused=false;
-        started_ticks=SDL_GetTicks()-paused_ticks+started_ticks;
-    }
+    started = true;
+    stopwatch.start();
 }
 
-/**
- * Function to stop the timer
- */
-void Timer::stop()
-{
-    started=false;
-}
-
-/**
- * Function to pause the timer
- * The timer doesn't count ticks when paused
- */
-void Timer::pause()
-{
-    paused=true;
-}
-
-/**
- * Function to reload the timer to 0 milliseconds
- */
-void Timer::reload()
-{
-    started_ticks=SDL_GetTicks();
-}
-
-}// end of utility namespace
-
+}//end of utility namespace

@@ -3,7 +3,7 @@
 
 #include "program_mode.h"
 #include "../utility/configuration.h"
-#include "../utility/timer.h"
+#include "../utility/stopwatch.h"
 #include "../gui/gui_manager.h"
 #include "../gui/background.h"
 

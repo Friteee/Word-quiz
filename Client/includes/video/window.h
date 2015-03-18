@@ -41,7 +41,10 @@ public:
     static SDL_Texture* create_texture(SDL_Surface*);
     // draw line
     static void draw_line(int x_1 , int y_1 , int x_2 , int y_2, uint8_t r , uint8_t g, uint8_t b);
-
+    // width getter
+    static int get_width();
+    // height getter
+    static int get_height();
 
 private:
 

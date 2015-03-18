@@ -35,9 +35,11 @@ public:
 private:
     // configuration
     utility::Configuration main_config;
-    int width,
-        height;
-    bool fullscreen;
+    //width and height
+    int                    width,
+                           height;
+    //is it full-screen?
+    bool                   fullscreen;
     // constructor
     Game_logic();
     // remove all other means to create video_subsystem
@@ -45,11 +47,11 @@ private:
     // instance for maintaining singleton
     static Game_logic* instance;
     // bool to know if the instance was created without errors
-    bool is_created;
+    bool           is_created;
     // event handler
-    SDL_Event event;
+    SDL_Event      event;
     // bool to quit out of main loop
-    bool quit_program;
+    bool           quit_program;
     // current mode
     Program_mode * current;
     // program mode marked for deletion

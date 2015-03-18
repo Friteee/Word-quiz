@@ -4,7 +4,7 @@
 #include "game_logic.h"
 #include "../video/window.h"
 #include "../video/camera.h"
-#include "../utility/timer.h"
+#include "../utility/stopwatch.h"
 #include "../utility/functions.h"
 #include "../utility/configuration.h"
 #include <cstdlib>
@@ -90,8 +90,8 @@ void Game_logic::run()
     bool fps_cap_enabled = instance->main_config.find_string("fps_cap_enabled").c_str()==string("true");
 
     // timers to enable sleeping and count of fps
-    utility::Timer sleep_timer;
-    utility::Timer fps_timer;
+    utility::Stopwatch sleep_timer;
+    utility::Stopwatch fps_timer;
     fps_timer.start();
     sleep_timer.start();
     // integer for fps, overflow is unlikely :)
