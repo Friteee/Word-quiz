@@ -1569,7 +1569,9 @@
 	"gui_element.h"
 	<vector>
 
-1425226077 d:\github\word-quiz\client\includes\utility\timer.h
+1427020886 d:\github\word-quiz\client\includes\utility\timer.h
+	<functional>
+	"stopwatch.h"
 
 1426068426 d:\github\word-quiz\client\includes\gui\click.h
 	<SDL.h>
@@ -1641,7 +1643,7 @@
 	"../utility/configuration.h"
 	<string>
 
-1426670624 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
+1427020713 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
 	"text_button.h"
 	<functional>
 	"../video/window.h"
@@ -1679,9 +1681,9 @@
 	<vector>
 	<cstdio>
 
-1416843958 source:d:\github\word-quiz\client\includes\utility\timer.cpp
+1427020939 source:d:\github\word-quiz\client\includes\utility\timer.cpp
 	"timer.h"
-	<SDL.h>
+	<cstdio>
 
 1420213265 source:d:\github\word-quiz\client\includes\video\camera.cpp
 	<SDL.h>
@@ -1768,9 +1770,10 @@
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1426665650 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
+1427021486 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
+	"../gui/gui_manager.h"
 	"../game/word_group.h"
 	"../video/texture.h"
 	<string>
@@ -1798,9 +1801,10 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1426669844 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
+1427022248 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
+	"../gui/text.h"
 	<cstdlib>
 
 1425584400 source:d:\github\word-quiz\client\includes\main_logic\group_selection_mode.cpp
@@ -1828,7 +1832,7 @@
 	"../gui/gui_manager.h"
 	"../gui/background.h"
 
-1426670670 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
+1427022341 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
 	"main_menu_mode.h"
 	"group_selection_mode.h"
 	"help_mode.h"
@@ -1874,7 +1878,7 @@
 	<string>
 	<vector>
 
-1426670502 d:\github\word-quiz\client\includes\utility\stopwatch.h
+1427020704 d:\github\word-quiz\client\includes\utility\stopwatch.h
 
 1426670502 source:d:\github\word-quiz\client\includes\utility\stopwatch.cpp
 	"stopwatch.h"

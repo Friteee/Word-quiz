@@ -1,6 +1,7 @@
 
 #include "gaming_mode.h"
 #include "game_logic.h"
+#include "../gui/text.h"
 #include <cstdlib>
 
 namespace main_logic
@@ -97,6 +98,7 @@ bool Gaming_mode::run()
     // reload video subsystem
     video::Video_subsystem::reload();
 
+    gui_manager.update();
 
     // main logic here
     main_background->show();
@@ -105,10 +107,12 @@ bool Gaming_mode::run()
 
     blit_location.w = video::Video_subsystem::get_width()/4;
     blit_location.h = video::Video_subsystem::get_width()/4;
-    blit_location.x = video::Video_subsystem::get_width()/2 - video::Video_subsystem::get_width()/8;
-    blit_location.y = video::Video_subsystem::get_height()/2 - 300;
+    blit_location.x = video::Video_subsystem::get_width()/2 - blit_location.w/2;
+    blit_location.y = video::Video_subsystem::get_height()/2 - blit_location.h;
 
     video::Video_subsystem::blit(word_image.get_texture() , nullptr , &blit_location);
+
+    gui_manager.show();
 
     video::Video_subsystem::update_screen();
 
@@ -123,7 +127,6 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     main_config(init_config),
     main_group( utility::Configuration("config/groups/banana.cfg"))
 {
-    change_mode = false;
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
     srand(SDL_GetTicks());
 
@@ -131,6 +134,20 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     word = main_group.get_word(index);
     word_image = main_group.get_texture(index);
     main_group.delete_word(index);
+
+
+    int word_x = 400;
+    int word_y = 300;
+    int text_size = 64;
+    std::string empty_word (word.size(), '-');
+    gui::Text * word_text = new gui::Text(init_config ,
+                                          empty_word,
+                                          word_x ,
+                                          word_y ,
+                                          text_size ,
+                                          SDL_Color{255,255,255,255}) ;
+
+    gui_manager.add_element(word_text);
 
 }
 

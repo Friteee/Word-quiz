@@ -112,8 +112,9 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     change_mode(false),
     quit(false)
 {
+    int button_x = video::Video_subsystem::get_width()/2 - 100;
     //add play button
-    gui::Text_button * play_button = new gui::Text_button(main_config,"Play",550,100);
+    gui::Text_button * play_button = new gui::Text_button(main_config,"Play",button_x,100);
     auto play_click_function = [this]()
     {
         Game_logic::set_current_mode (new Gaming_mode (main_config) );
@@ -122,7 +123,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
 
 
     //add help button
-    gui::Text_button * help_button = new gui::Text_button(main_config,"Help",550,200);
+    gui::Text_button * help_button = new gui::Text_button(main_config,"Help",button_x,200);
     auto help_click_function = [this]()
     {
         Game_logic::set_current_mode (new Help_mode (main_config) );
@@ -131,7 +132,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
 
 
     //add quit button
-    gui::Text_button * quit_button = new gui::Text_button(main_config,"Quit",550,300);
+    gui::Text_button * quit_button = new gui::Text_button(main_config,"Quit",button_x,300);
     auto quit_click_function = [this]()
     {
         this->quit=true;

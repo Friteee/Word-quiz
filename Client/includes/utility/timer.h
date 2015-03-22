@@ -22,7 +22,7 @@ private:
     // for handling ticks
     Stopwatch stopwatch;
     // time until next function
-    int time = 0;
+    unsigned int time = 0;
     // bool if started
     bool started = false;
     // function
