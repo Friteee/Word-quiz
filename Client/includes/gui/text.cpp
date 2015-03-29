@@ -19,17 +19,25 @@ Text::Text(utility::Configuration * config, std::string init_text, int x , int y
 
     font = TTF_OpenFont(config->find_string("font").c_str(),text_size);
 
-    texture.init(text,color_key,font);
+    if(!text.empty())
+    {
+        texture.init(text,color_key,font);
 
+        location.w = texture.get_width();
+        location.h = texture.get_height();
+    }
+    else
+    {
+        location.w = 0;
+        location.h = 0;
+    }
     location.x = x;
     location.y = y;
-    location.w = texture.get_width();
-    location.h = texture.get_height();
 }
 
 void Text::show()
 {
-    if(!visible)
+    if(!visible||text.length()==0)
     {
         return;
     }
@@ -49,9 +57,12 @@ Text::~Text()
 void Text::change_text(std::string init_text)
 {
     text = init_text;
-    texture.init(init_text,color_key,font);
-    location.w = texture.get_width();
-    location.h = texture.get_height();
+    if(text.length()!=0)
+    {
+        texture.init(init_text,color_key,font);
+        location.w = texture.get_width();
+        location.h = texture.get_height();
+    }
 }
 
 void Text::handle_click(int x, int y)

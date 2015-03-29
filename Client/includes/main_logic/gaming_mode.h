@@ -6,6 +6,8 @@
 #include "../gui/gui_manager.h"
 #include "../game/word_group.h"
 #include "../video/texture.h"
+#include "../gui/text.h"
+
 #include <string>
 
 namespace main_logic
@@ -20,7 +22,9 @@ public :
     bool handle_input()override;
 
 private:
-
+    void update_input();
+    // change word function
+    void change_word();
     // background
     gui::Background        * main_background;
     // event
@@ -29,12 +33,19 @@ private:
     utility::Configuration * main_config;
     // word group
     game::Word_group         main_group;
-    // word we are trying to guess
-    std::string              word;
+
     // texture of the word
     video::Texture           word_image;
     // gui elements manager
     gui::Gui_manager         gui_manager;
+    // word we are trying to guess
+    std::string              word;
+    // help to guess the word
+    gui::Text              * word_text;
+    // current word input
+    gui::Text              * current_input;
+    // input word
+    std::string              input_word;
 
 };
 

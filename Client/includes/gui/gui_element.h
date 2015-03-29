@@ -48,6 +48,14 @@ public:
         location.x=x;
         location.y=y;
     }
+    inline int get_width()
+    {
+        return location.w;
+    }
+    inline int get_height()
+    {
+        return location.h;
+    }
     virtual ~Gui_element() {}
 
 protected :
