@@ -44,7 +44,7 @@ void Texture::init(SDL_Surface * init_surface)
     if(!init_surface)
     {
         printf("Error : null pointer passed to texture");
-        assert(1);
+        assert(0);
     }
     surface = std::make_shared<SDL_Surface*>(init_surface);
     create_texture(std::string("(Surface has no filename)"));
@@ -159,7 +159,7 @@ void Texture::create_surface(std::string filename)
     {
         printf("Error : Error creating surface from %s \n", filename.c_str());
         printf("Error code : %s\n",SDL_GetError());
-        assert(1);
+        assert(0);
     }
 }
 
@@ -172,7 +172,7 @@ void Texture::create_texture(std::string filename)
         printf("Error : Error creating texture from %s \n", filename.c_str());
         printf("Possible causes - No renderer present \n");
         printf("Error code : %s\n",SDL_GetError());
-        assert(1);
+        assert(0);
     }
     else
     {

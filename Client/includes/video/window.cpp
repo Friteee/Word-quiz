@@ -184,6 +184,16 @@ int Video_subsystem::get_width()
     return width;
 }
 
+void Video_subsystem::fill_rect(SDL_Rect filling, uint8_t r , uint8_t g, uint8_t b)
+{
+    SDL_SetRenderDrawColor(instance->main_renderer , r , g , b , 255);
+
+    SDL_RenderFillRect(instance->main_renderer, &filling);
+
+    SDL_SetRenderDrawColor(instance->main_renderer , 0 , 0 , 0 , 255);
+    return;
+}
+
 }// end of namespace
 
 #endif // WINDOW

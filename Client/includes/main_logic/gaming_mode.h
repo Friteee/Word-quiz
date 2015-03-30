@@ -8,6 +8,11 @@
 #include "../video/texture.h"
 #include "../gui/text.h"
 
+namespace gui
+{
+    class Progress_bar;
+}
+
 #include <string>
 
 namespace main_logic
@@ -24,7 +29,9 @@ public :
 private:
     void update_input();
     // change word function
-    void change_word();
+    bool change_word();
+    // reveal letter
+    void reveal_letter();
     // background
     gui::Background        * main_background;
     // event
@@ -33,20 +40,28 @@ private:
     utility::Configuration * main_config;
     // word group
     game::Word_group         main_group;
-
     // texture of the word
     video::Texture           word_image;
     // gui elements manager
     gui::Gui_manager         gui_manager;
     // word we are trying to guess
     std::string              word;
+    // available word
+    std::string              letters_available;
     // help to guess the word
     gui::Text              * word_text;
     // current word input
     gui::Text              * current_input;
+    // score
+    gui::Text              * score;
+    // progress bar
+    gui::Progress_bar      * progress_bar;
     // input word
     std::string              input_word;
-
+    // score
+    int current_score;
+    // add score
+    int added_score;
 };
 
 }

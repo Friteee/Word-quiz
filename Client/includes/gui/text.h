@@ -15,10 +15,11 @@ public:
 
     Text(utility::Configuration * config, std::string init_text , int x , int y, int init_text_size, SDL_Color init_color_key);
     ~Text();
-    void show() override;
-    void update() override;
-    void change_text(std::string init_text);
-    void handle_click(int x, int y)override;
+    void         show() override;
+    void         update() override;
+    void         change_text(std::string init_text);
+    void         handle_click(int x, int y)override;
+    unsigned int get_length();
 
 private:
 

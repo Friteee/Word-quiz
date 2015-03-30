@@ -20,7 +20,7 @@ Word_group::Word_group(utility::Configuration cfg)
         if(buffer.size() != 2)
         {
             printf("Either word or its image is not written\n");
-            assert(1);
+            assert(0);
         }
         words.push_back(buffer[0]);
         video::Texture texture_buffer;

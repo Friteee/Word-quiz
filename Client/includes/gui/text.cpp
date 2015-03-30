@@ -70,4 +70,9 @@ void Text::handle_click(int x, int y)
 
 }
 
+unsigned int Text::get_length()
+{
+    return text.length();
+}
+
 }// end of namespace gui

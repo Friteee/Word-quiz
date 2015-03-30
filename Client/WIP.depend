@@ -1548,7 +1548,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1426674751 d:\github\word-quiz\client\includes\video\texture.h
+1427709138 d:\github\word-quiz\client\includes\video\texture.h
 	<string>
 	<memory>
 	<SDL.h>
@@ -1595,7 +1595,7 @@
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1426671142 d:\github\word-quiz\client\includes\video\window.h
+1427709895 d:\github\word-quiz\client\includes\video\window.h
 	<SDL.h>
 	"window.h"
 
@@ -1631,13 +1631,13 @@
 	"click.h"
 	<cstdio>
 
-1427627987 source:d:\github\word-quiz\client\includes\gui\text.cpp
+1427713947 source:d:\github\word-quiz\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
 	"../video/window.h"
 	<cstdio>
 
-1426070884 d:\github\word-quiz\client\includes\gui\text.h
+1427713912 d:\github\word-quiz\client\includes\gui\text.h
 	"text.h"
 	"gui_element.h"
 	"../utility/configuration.h"
@@ -1691,13 +1691,13 @@
 	"camera.h"
 	"window.h"
 
-1426674923 source:d:\github\word-quiz\client\includes\video\texture.cpp
+1427711348 source:d:\github\word-quiz\client\includes\video\texture.cpp
 	"texture.h"
 	"window.h"
 	<assert.h>
 	<cstdio>
 
-1426671142 source:d:\github\word-quiz\client\includes\video\window.cpp
+1427709895 source:d:\github\word-quiz\client\includes\video\window.cpp
 	<SDL.h>
 	<stdio.h>
 	"window.h"
@@ -1770,7 +1770,7 @@
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1427628026 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
+1427714257 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
 	"../gui/gui_manager.h"
@@ -1802,11 +1802,13 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1427628215 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
+1427712704 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
 	"../gui/text.h"
+	"../gui/progress_bar.h"
 	<cstdlib>
+	<sstream>
 
 1425588000 source:d:\github\word-quiz\client\includes\main_logic\group_selection_mode.cpp
 	"group_selection_mode.h"
@@ -1866,7 +1868,7 @@
 	"text_button.h"
 	<vector>
 
-1426673586 source:d:\github\word-quiz\client\includes\game\word_group.cpp
+1427711327 source:d:\github\word-quiz\client\includes\game\word_group.cpp
 	"word_group.h"
 	"../utility/functions.h"
 	<cstdio>
@@ -1884,4 +1886,15 @@
 1426674102 source:d:\github\word-quiz\client\includes\utility\stopwatch.cpp
 	"stopwatch.h"
 	<SDL.h>
+
+1427711511 source:d:\github\word-quiz\client\includes\gui\progress_bar.cpp
+	"progress_bar.h"
+	"../video/window.h"
+	<cstdio>
+	<assert.h>
+
+1427711507 d:\github\word-quiz\client\includes\gui\progress_bar.h
+	<functional>
+	"../utility/stopwatch.h"
+	"gui_element.h"
 
