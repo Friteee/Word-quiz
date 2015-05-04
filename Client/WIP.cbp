@@ -29,6 +29,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="0" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -43,7 +44,7 @@
 			<Add directory="SDL2" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf" />
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer" />
 			<Add option="-static-libgcc -static-libstdc++" />
 			<Add library="SDL2lib\libSDL2.a" />
 			<Add library="SDL2lib\libSDL2.dll.a" />
@@ -51,9 +52,18 @@
 			<Add library="SDL2lib\libSDL2main.a" />
 			<Add library="SDL2_ttf_lib\libSDL2_ttf.a" />
 			<Add library="SDL2_ttf_lib\libSDL2_ttf.dll.a" />
+			<Add library="SDL2_mix\libSDL2_mixer.a" />
+			<Add library="SDL2_mix\libSDL2_mixer.dll.a" />
 			<Add directory="SDL2lib" />
 			<Add directory="SDL2_ttf_lib" />
+			<Add directory="SDL2_mix" />
 		</Linker>
+		<Unit filename="includes/audio/audio.cpp" />
+		<Unit filename="includes/audio/audio.h" />
+		<Unit filename="includes/audio/music.cpp" />
+		<Unit filename="includes/audio/music.h" />
+		<Unit filename="includes/audio/sound.cpp" />
+		<Unit filename="includes/audio/sound.h" />
 		<Unit filename="includes/game/animation.cpp" />
 		<Unit filename="includes/game/animation.h" />
 		<Unit filename="includes/game/word_group.cpp" />

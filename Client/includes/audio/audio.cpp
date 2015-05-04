@@ -16,6 +16,9 @@ bool Audio_subsystem::initialize_subsystem()
         printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
         return false;
     }
+
+    Mix_VolumeMusic(5);
+
     return true;
 }
 

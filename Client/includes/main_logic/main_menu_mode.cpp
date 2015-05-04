@@ -56,6 +56,7 @@ bool Main_menu_mode::handle_input()
         {
         case SDL_QUIT:
             return false;
+            music.stop();
             break;
         case SDL_MOUSEBUTTONDOWN:
             click.set_clicked(false);
@@ -112,33 +113,39 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     change_mode(false),
     quit(false)
 {
-    music.init("sound/tetris.mp3");
+    music.init("sound/dendi.mp3");
     music.play();
 
     int button_x = video::Video_subsystem::get_width()/2 - 100;
     //add play button
-    gui::Text_button * play_button = new gui::Text_button(main_config,"Play",button_x,100);
+    gui::Text_button * play_button = new gui::Text_button(main_config,"Play",button_x,300);
     auto play_click_function = [this]()
     {
+        music.stop();
         Game_logic::set_current_mode (new Gaming_mode (main_config) );
+
     };
     play_button->init_function(play_click_function);
 
 
     //add help button
-    gui::Text_button * help_button = new gui::Text_button(main_config,"Help",button_x,200);
+    gui::Text_button * help_button = new gui::Text_button(main_config,"Help",button_x,400);
     auto help_click_function = [this]()
     {
+        music.stop();
         Game_logic::set_current_mode (new Help_mode (main_config) );
+
     };
     help_button->init_function(help_click_function);
 
 
     //add quit button
-    gui::Text_button * quit_button = new gui::Text_button(main_config,"Quit",button_x,300);
+    gui::Text_button * quit_button = new gui::Text_button(main_config,"Quit",button_x,500);
     auto quit_click_function = [this]()
     {
+        music.stop();
         this->quit=true;
+
     };
     quit_button->init_function(quit_click_function);
 

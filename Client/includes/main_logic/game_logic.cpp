@@ -72,7 +72,6 @@ Game_logic::Game_logic():
     if(!audio::Audio_subsystem::initialize_subsystem())
     {
         printf("Warning : audio subsystem is not initialized");
-
     }
 
     current = new Main_menu_mode (&main_config);

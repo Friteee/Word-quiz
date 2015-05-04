@@ -9,6 +9,7 @@
 #include "../gui/text.h"
 #include "../audio/sound.h"
 #include "../utility/stopwatch.h"
+#include "../audio/music.h"
 
 namespace gui
 {
@@ -64,6 +65,8 @@ private:
     audio::Sound             applause;
     // score
     utility::Stopwatch       score_stopwatch;
+    // music
+    audio::Music             music;
 
 };
 

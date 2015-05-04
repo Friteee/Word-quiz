@@ -17,8 +17,7 @@ void Sound::init(std::string init_sound)
 
 void Sound::play()
 {
-
-    Mix_PlayChannel( -1, *sound.get(), 0 );
+    Mix_PlayChannel( 1, *sound.get(), 0 );
 }
 
 Sound::~Sound()

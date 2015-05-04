@@ -1,3 +1,6 @@
+#ifndef MUSIC_H_INCLUDED
+#define MUSIC_H_INCLUDED
+
 #include <SDl_mixer.h>
 #include <string>
 #include <memory>
@@ -20,3 +23,5 @@ private:
 };
 
 }
+
+#endif // MUSIC_H_INCLUDED
