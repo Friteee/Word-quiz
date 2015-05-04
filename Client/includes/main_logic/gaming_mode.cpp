@@ -1,7 +1,6 @@
 
 #include "gaming_mode.h"
 #include "game_logic.h"
-#include "../gui/text.h"
 #include "../gui/progress_bar.h"
 #include <cstdlib>
 #include <sstream>
@@ -136,6 +135,7 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     main_config(init_config),
     main_group( utility::Configuration("config/groups/banana.cfg"))
 {
+    applause.init(std::string ("sound/applause.wav"));
     // init background and randomness
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
     srand(SDL_GetTicks());
@@ -247,6 +247,7 @@ bool Gaming_mode::change_word()
 
     score->change_text(ss.str());
     added_score = 100;
+    applause.play();
     return false;
 }
 

@@ -1762,21 +1762,23 @@
 	"program_mode.h"
 	"../gui/background.h"
 
-1426668583 d:\github\word-quiz\client\includes\main_logic\game_logic.h
+1430744478 d:\github\word-quiz\client\includes\main_logic\game_logic.h
 	"../video/window.h"
 	"../gui/background.h"
 	"../video/camera.h"
 	"../utility/configuration.h"
+	"../audio/audio.h"
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1427715674 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
+1430748052 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
 	"../gui/gui_manager.h"
 	"../game/word_group.h"
 	"../video/texture.h"
 	"../gui/text.h"
+	"../audio/sound.h"
 	<string>
 
 1425588000 d:\github\word-quiz\client\includes\main_logic\program_mode.h
@@ -1791,7 +1793,7 @@
 	"../utility/stopwatch.h"
 	"../video/window.h"
 
-1427715525 source:d:\github\word-quiz\client\includes\main_logic\game_logic.cpp
+1430744987 source:d:\github\word-quiz\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -1802,15 +1804,14 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1427805701 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
+1430748158 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
-	"../gui/text.h"
 	"../gui/progress_bar.h"
 	<cstdlib>
 	<sstream>
 
-1425588000 source:d:\github\word-quiz\client\includes\main_logic\group_selection_mode.cpp
+1430155858 source:d:\github\word-quiz\client\includes\main_logic\group_selection_mode.cpp
 	"group_selection_mode.h"
 	"game_logic.h"
 
@@ -1897,4 +1898,29 @@
 	<functional>
 	"../utility/stopwatch.h"
 	"gui_element.h"
+
+1430747322 d:\github\word-quiz\client\includes\audio\audio.h
+
+1430745035 source:d:\github\word-quiz\client\includes\audio\audio.cpp
+	<SDL_mixer.h>
+	<cstdio>
+	"audio.h"
+
+1376160025 d:\github\word-quiz\client\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1430748248 source:d:\github\word-quiz\client\includes\audio\sound.cpp
+	"sound.h"
+	<cstdio>
+
+1430747858 d:\github\word-quiz\client\includes\audio\sound.h
+	<SDl_mixer.h>
+	<string>
+	<memory>
 

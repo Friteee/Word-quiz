@@ -5,6 +5,7 @@
 #include "../gui/background.h"
 #include "../video/camera.h"
 #include "../utility/configuration.h"
+#include "../audio/audio.h"
 #include "gaming_mode.h"
 #include "main_menu_mode.h"
 

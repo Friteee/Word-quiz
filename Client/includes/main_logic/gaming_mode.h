@@ -7,6 +7,7 @@
 #include "../game/word_group.h"
 #include "../video/texture.h"
 #include "../gui/text.h"
+#include "../audio/sound.h"
 
 namespace gui
 {
@@ -58,6 +59,8 @@ private:
     gui::Progress_bar      * progress_bar;
     // input word
     std::string              input_word;
+    //applause sound
+    audio::Sound             applause;
     // score
     int current_score;
     // add score

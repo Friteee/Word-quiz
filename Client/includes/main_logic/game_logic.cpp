@@ -42,7 +42,7 @@ bool Game_logic::initialize(const char* filename)
         return true;
     }
     // enable SDL system
-    if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_EVENTS))
+    if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_AUDIO|SDL_INIT_EVENTS))
     {
         printf("Couldn't initialize SDL subsystems\n");
         printf("Error = %s\n", SDL_GetError());
@@ -68,6 +68,12 @@ Game_logic::Game_logic():
     quit_program (false)
 {
     video::Video_subsystem::set_programs_name(main_config.find_string("programs_name").c_str());
+
+    if(!audio::Audio_subsystem::initialize_subsystem())
+    {
+        printf("Warning : audio subsystem is not initialized");
+
+    }
 
     current = new Main_menu_mode (&main_config);
     // if we have full screen resize camera appropriately
