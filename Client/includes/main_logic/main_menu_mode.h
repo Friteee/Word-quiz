@@ -7,6 +7,7 @@
 #include "../gui/background.h"
 #include "../utility/stopwatch.h"
 #include "../video/window.h"
+#include "../audio/music.h"
 
 
 namespace main_logic
@@ -43,6 +44,8 @@ private:
     gui::Background          background;
     bool                     change_mode;
     bool                     quit;
+    //music
+    audio::Music             music;
 };
 
 } // end of main_logic namespace

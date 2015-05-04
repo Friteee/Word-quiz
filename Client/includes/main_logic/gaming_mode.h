@@ -8,6 +8,7 @@
 #include "../video/texture.h"
 #include "../gui/text.h"
 #include "../audio/sound.h"
+#include "../utility/stopwatch.h"
 
 namespace gui
 {
@@ -62,9 +63,8 @@ private:
     //applause sound
     audio::Sound             applause;
     // score
-    int current_score;
-    // add score
-    int added_score;
+    utility::Stopwatch       score_stopwatch;
+
 };
 
 }

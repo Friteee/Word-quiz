@@ -1631,7 +1631,7 @@
 	"click.h"
 	<cstdio>
 
-1427713947 source:d:\github\word-quiz\client\includes\gui\text.cpp
+1430749966 source:d:\github\word-quiz\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
 	"../video/window.h"
@@ -1771,7 +1771,7 @@
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1430748052 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
+1430749928 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
 	"../gui/gui_manager.h"
@@ -1779,19 +1779,21 @@
 	"../video/texture.h"
 	"../gui/text.h"
 	"../audio/sound.h"
+	"../utility/stopwatch.h"
 	<string>
 
 1425588000 d:\github\word-quiz\client\includes\main_logic\program_mode.h
 	"../utility/configuration.h"
 	<SDL.h>
 
-1426674246 d:\github\word-quiz\client\includes\main_logic\main_menu_mode.h
+1430751801 d:\github\word-quiz\client\includes\main_logic\main_menu_mode.h
 	"program_mode.h"
 	"../gui/text_button.h"
 	"../gui/gui_manager.h"
 	"../gui/background.h"
 	"../utility/stopwatch.h"
 	"../video/window.h"
+	"../audio/music.h"
 
 1430744987 source:d:\github\word-quiz\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
@@ -1804,7 +1806,7 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1430748158 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
+1430750258 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
 	"../gui/progress_bar.h"
@@ -1836,7 +1838,7 @@
 	"../gui/gui_manager.h"
 	"../gui/background.h"
 
-1427025941 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
+1430751895 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
 	"main_menu_mode.h"
 	"group_selection_mode.h"
 	"help_mode.h"
@@ -1920,6 +1922,15 @@
 	<cstdio>
 
 1430747858 d:\github\word-quiz\client\includes\audio\sound.h
+	<SDl_mixer.h>
+	<string>
+	<memory>
+
+1430751670 source:d:\github\word-quiz\client\includes\audio\music.cpp
+	"music.h"
+	<cstdio>
+
+1430751462 d:\github\word-quiz\client\includes\audio\music.h
 	<SDl_mixer.h>
 	<string>
 	<memory>

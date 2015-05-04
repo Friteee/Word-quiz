@@ -112,6 +112,11 @@ bool Gaming_mode::run()
         quit = change_word();
     if(quit)
         return false;
+
+    std::stringstream ss;
+    ss <<"Time : "<<score_stopwatch.get_ticks()/1000;
+    score->change_text(ss.str());
+
     SDL_Rect blit_location ;
     blit_location.w = video::Video_subsystem::get_width()/4;
     blit_location.h = video::Video_subsystem::get_width()/4;
@@ -135,7 +140,8 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     main_config(init_config),
     main_group( utility::Configuration("config/groups/banana.cfg"))
 {
-    applause.init(std::string ("sound/applause.wav"));
+    score_stopwatch.start();
+    applause.init(std::string ("sound/pop.wav"));
     // init background and randomness
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
     srand(SDL_GetTicks());
@@ -185,11 +191,6 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     progress_bar = new gui::Progress_bar(5000 , progress_bar_location);
     auto progress_function = [this]()
     {
-        this->added_score -= 20;
-        if(this->word_text->get_length()<20)
-            this->added_score += this->word_text->get_length();
-        else
-            this->added_score += 19;
         this->reveal_letter();
     };
     progress_bar->set_function(progress_function);
@@ -213,9 +214,6 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     gui_manager.add_element(progress_bar);
     //start input
     SDL_StartTextInput();
-    //initialize score
-    added_score = 100;
-    current_score = 0;
 
 }
 
@@ -240,13 +238,6 @@ bool Gaming_mode::change_word()
     update_input();
     //reset progress bar
     progress_bar->reset();
-    //add up score
-    current_score += added_score;
-    std::stringstream ss;
-    ss <<"Score = "<<current_score;
-
-    score->change_text(ss.str());
-    added_score = 100;
     applause.play();
     return false;
 }

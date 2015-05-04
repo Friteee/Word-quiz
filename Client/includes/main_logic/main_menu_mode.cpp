@@ -112,6 +112,9 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     change_mode(false),
     quit(false)
 {
+    music.init("sound/tetris.mp3");
+    music.play();
+
     int button_x = video::Video_subsystem::get_width()/2 - 100;
     //add play button
     gui::Text_button * play_button = new gui::Text_button(main_config,"Play",button_x,100);

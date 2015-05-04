@@ -56,6 +56,8 @@ Text::~Text()
 
 void Text::change_text(std::string init_text)
 {
+    if(text==init_text)
+        return;
     text = init_text;
     if(text.length()!=0)
     {
