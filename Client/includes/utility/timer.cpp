@@ -18,7 +18,8 @@ void Timer::set_function(std::function<void()> init_function)
 // update the timer to see if
 void Timer::update()
 {
-    if(started && stopwatch.get_ticks() > time){
+    if(started && stopwatch.get_ticks() > time)
+    {
         if(script)
             script();
         else
@@ -34,5 +35,7 @@ void Timer::start()
     started = true;
     stopwatch.start();
 }
+
+
 
 }//end of utility namespace

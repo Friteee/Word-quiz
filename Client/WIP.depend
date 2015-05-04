@@ -1230,7 +1230,7 @@
 	<string>
 	<vector>
 
-1426070903 d:\github\word-quiz\client\includes\gui\text_button.h
+1430156048 d:\github\word-quiz\client\includes\gui\text_button.h
 	"gui_element.h"
 	<functional>
 	"../game/animation.h"
@@ -1643,7 +1643,7 @@
 	"../utility/configuration.h"
 	<string>
 
-1427024313 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
+1427715455 source:d:\github\word-quiz\client\includes\gui\text_button.cpp
 	"text_button.h"
 	<functional>
 	"../video/window.h"
@@ -1681,7 +1681,7 @@
 	<vector>
 	<cstdio>
 
-1427024539 source:d:\github\word-quiz\client\includes\utility\timer.cpp
+1427715638 source:d:\github\word-quiz\client\includes\utility\timer.cpp
 	"timer.h"
 	<cstdio>
 
@@ -1770,7 +1770,7 @@
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1427714257 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
+1427715674 d:\github\word-quiz\client\includes\main_logic\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
 	"../gui/gui_manager.h"
@@ -1791,7 +1791,7 @@
 	"../utility/stopwatch.h"
 	"../video/window.h"
 
-1426674258 source:d:\github\word-quiz\client\includes\main_logic\game_logic.cpp
+1427715525 source:d:\github\word-quiz\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -1802,7 +1802,7 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1427712704 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
+1427805701 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"game_logic.h"
 	"../gui/text.h"

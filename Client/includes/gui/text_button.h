@@ -18,7 +18,7 @@ public:
     void update()override;
     void init_function(std::function<void()> init_on_click);
     void change_text(std::string init_text);
-    void handle_click(int x, int y);
+    void handle_click(int x, int y)override;
     ~Text_button();
 
 private:

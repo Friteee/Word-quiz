@@ -102,7 +102,6 @@ Group_selection_mode::Group_selection_mode(utility::Configuration * init_config)
 {
 
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
-
 }
 
 }// end of main_logic namespace

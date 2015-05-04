@@ -39,6 +39,8 @@ Text_button::Text_button(utility::Configuration * config , std::string init_text
     location.y = y;
     location.w = texture.get_width();
     location.h = texture.get_height();
+
+    is_clicked = false;
 }
 
 /**

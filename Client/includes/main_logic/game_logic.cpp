@@ -102,7 +102,7 @@ void Game_logic::run()
         fps++;
         if(fps_timer.get_ticks()>1000)
         {
-            printf("Current fps = %i \n",fps);
+            printf("Current fps = %u \n",fps);
             fps_timer.reload();
             fps=0;
         }

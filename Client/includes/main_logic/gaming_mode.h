@@ -10,7 +10,7 @@
 
 namespace gui
 {
-    class Progress_bar;
+class Progress_bar;
 }
 
 #include <string>

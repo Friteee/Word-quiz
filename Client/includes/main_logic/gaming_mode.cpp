@@ -159,7 +159,7 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
                               word_x ,
                               word_y ,
                               text_size ,
-                              SDL_Color{255,255,255,255}) ;
+                              SDL_Color {255,255,255,255}) ;
 
     word_x = video::Video_subsystem::get_width()/2 - word_text->get_width()/2;
     word_y = video::Video_subsystem::get_height()/2 + word_text->get_height();
@@ -171,7 +171,7 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
                                   word_x ,
                                   word_y ,
                                   text_size ,
-                                  SDL_Color{255,255,255,255}) ;
+                                  SDL_Color {255,255,255,255}) ;
     word_x = video::Video_subsystem::get_width()/2 - current_input->get_width()/2;
     word_y = video::Video_subsystem::get_height()/2 + word_text->get_height()*2;
     current_input->change_position(word_x,word_y);
@@ -182,7 +182,7 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     progress_bar_location.h = video::Video_subsystem::get_height() / 12;
     progress_bar_location.x = video::Video_subsystem::get_width() - progress_bar_location.w - 20;
     progress_bar_location.y = video::Video_subsystem::get_height() - progress_bar_location.h - 20;
-    progress_bar = new gui::Progress_bar(1500 , progress_bar_location);
+    progress_bar = new gui::Progress_bar(5000 , progress_bar_location);
     auto progress_function = [this]()
     {
         this->added_score -= 20;
@@ -202,7 +202,7 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config):
                           word_x,
                           word_y,
                           text_size ,
-                          SDL_Color{255,255,255,255}) ;
+                          SDL_Color {255,255,255,255}) ;
     word_y = video::Video_subsystem::get_height() - score->get_height() - 20;
     score->change_position(word_x, word_y);
 

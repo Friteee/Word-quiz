@@ -60,13 +60,13 @@
 		<Unit filename="includes/game/word_group.h" />
 		<Unit filename="includes/gui/background.cpp" />
 		<Unit filename="includes/gui/background.h" />
-		<Unit filename="includes/gui/button_list.cpp" />
-		<Unit filename="includes/gui/button_list.h" />
+		<Unit filename="includes/gui/button.h" />
 		<Unit filename="includes/gui/click.cpp" />
 		<Unit filename="includes/gui/click.h" />
 		<Unit filename="includes/gui/gui_element.h" />
 		<Unit filename="includes/gui/gui_manager.cpp" />
 		<Unit filename="includes/gui/gui_manager.h" />
+		<Unit filename="includes/gui/progress_bar.cpp" />
 		<Unit filename="includes/gui/progress_bar.h" />
 		<Unit filename="includes/gui/text.cpp" />
 		<Unit filename="includes/gui/text.h" />
