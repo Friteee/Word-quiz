@@ -1,5 +1,6 @@
 
 #include "gaming_mode.h"
+#include "main_menu_mode.h"
 #include "game_logic.h"
 #include "../gui/progress_bar.h"
 #include <cstdlib>
@@ -111,7 +112,7 @@ bool Gaming_mode::run()
     if(input_word==word)
         quit = change_word();
     if(quit)
-        return false;
+        Game_logic::set_current_mode (new Main_menu_mode (main_config) );
 
     std::stringstream ss;
     ss <<"Time : "<<score_stopwatch.get_ticks()/1000;
