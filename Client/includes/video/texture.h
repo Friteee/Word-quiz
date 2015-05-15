@@ -31,6 +31,8 @@ public:
     SDL_Surface* get_surface();
     unsigned int get_width();
     unsigned int get_height();
+    void         set_angle(int init_angle);
+    int          get_angle();
     ~Texture();
 
 private:
@@ -40,6 +42,7 @@ private:
     void reset();
     std::shared_ptr<SDL_Surface*> surface;
     std::shared_ptr<SDL_Texture*> texture;
+    int angle;
 };
 
 }// end of video namespace

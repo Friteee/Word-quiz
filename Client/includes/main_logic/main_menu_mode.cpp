@@ -1,14 +1,15 @@
 
-
+#include <cstdio>
+#include <cmath>
 #include "main_menu_mode.h"
 #include "group_selection_mode.h"
 #include "help_mode.h"
 #include "gaming_mode.h"
 #include "game_logic.h"
-#include "../utility/stopwatch.h"
 #include "../gui/click.h"
-#include <cstdio>
-#include <cmath>
+#include "../gui/button.h "
+
+
 
 namespace main_logic
 {
@@ -113,7 +114,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     change_mode(false),
     quit(false)
 {
-    music.init("sound/dendi.mp3");
+    music.init("sound/dendi.wav");
     music.play();
 
     int button_x = video::Video_subsystem::get_width()/2 - 100;
@@ -121,9 +122,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     gui::Text_button * play_button = new gui::Text_button(main_config,"Play",button_x,300);
     auto play_click_function = [this]()
     {
-        music.stop();
-        Game_logic::set_current_mode (new Gaming_mode (main_config) );
-
+        Game_logic::set_current_mode (new Group_selection_mode (main_config) );
     };
     play_button->init_function(play_click_function);
 
@@ -132,9 +131,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     gui::Text_button * help_button = new gui::Text_button(main_config,"Help",button_x,400);
     auto help_click_function = [this]()
     {
-        music.stop();
         Game_logic::set_current_mode (new Help_mode (main_config) );
-
     };
     help_button->init_function(help_click_function);
 
@@ -145,7 +142,6 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     {
         music.stop();
         this->quit=true;
-
     };
     quit_button->init_function(quit_click_function);
 

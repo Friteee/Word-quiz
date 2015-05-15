@@ -17,6 +17,7 @@ public:
     void stop();
     void pause();
     ~Music();
+    static void change_volume(unsigned int volume);
 private:
     std::shared_ptr<Mix_Music *> sound;
 

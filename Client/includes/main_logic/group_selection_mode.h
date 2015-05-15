@@ -3,6 +3,7 @@
 
 #include "program_mode.h"
 #include "../gui/background.h"
+#include "../gui/gui_manager.h"
 
 
 namespace main_logic
@@ -26,6 +27,9 @@ private:
     utility::Configuration * main_config;
     // config for groups
     utility::Configuration groups;
+    // gui manager
+    gui::Gui_manager main_gui;
+    //groups
 };
 
 }

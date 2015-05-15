@@ -1,7 +1,9 @@
+
 #include <SDL.h>
 #include "video/window.h"
 #include "main_logic/game_logic.h"
 #include <stdio.h>
+
 
 using namespace std;
 

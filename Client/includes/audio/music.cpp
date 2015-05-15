@@ -17,7 +17,7 @@ void Music::init(std::string init_sound)
 
 void Music::play()
 {
-    Mix_PlayMusic( *sound.get(), 2 );
+    Mix_PlayMusic( *sound.get(), -1 );
 }
 
 void Music::stop()
@@ -44,6 +44,11 @@ void Music::pause()
 Music::~Music()
 {
     Mix_FreeMusic( *sound.get() );
+}
+
+void Music::change_volume(unsigned int volume)
+{
+    Mix_VolumeMusic(volume);
 }
 
 }

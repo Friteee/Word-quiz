@@ -9,6 +9,7 @@ namespace video
 
 Texture::Texture()
 {
+    angle = 0;
     // "Nope. Sorry. Nothing"
 }
 
@@ -142,6 +143,16 @@ unsigned int Texture::get_height()
 unsigned int Texture::get_width()
 {
     return (*surface)->w;
+}
+
+int Texture::get_angle()
+{
+    return angle;
+}
+
+void Texture::set_angle(int init_angle)
+{
+    angle=init_angle;
 }
 
 void Texture::set_alpha(unsigned int alpha)

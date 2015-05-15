@@ -25,4 +25,9 @@ Sound::~Sound()
     Mix_FreeChunk( *sound.get() );
 }
 
+void Sound::change_volume(unsigned int volume)
+{
+    Mix_Volume(1,volume);
+}
+
 }

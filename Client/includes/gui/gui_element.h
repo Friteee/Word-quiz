@@ -56,6 +56,14 @@ public:
     {
         return location.h;
     }
+    inline void set_width(int width)
+    {
+        location.w = width;
+    }
+    inline void set_height(int height)
+    {
+        location.h = height;
+    }
     virtual ~Gui_element() {}
 
 protected :

@@ -5,9 +5,11 @@
 #include "../gui/text_button.h"
 #include "../gui/gui_manager.h"
 #include "../gui/background.h"
+#include "../gui/button.h"
 #include "../utility/stopwatch.h"
 #include "../video/window.h"
 #include "../audio/music.h"
+
 
 
 namespace main_logic

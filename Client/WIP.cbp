@@ -66,10 +66,13 @@
 		<Unit filename="includes/audio/sound.h" />
 		<Unit filename="includes/game/animation.cpp" />
 		<Unit filename="includes/game/animation.h" />
+		<Unit filename="includes/game/group.cpp" />
+		<Unit filename="includes/game/group.h" />
 		<Unit filename="includes/game/word_group.cpp" />
 		<Unit filename="includes/game/word_group.h" />
 		<Unit filename="includes/gui/background.cpp" />
 		<Unit filename="includes/gui/background.h" />
+		<Unit filename="includes/gui/button.cpp" />
 		<Unit filename="includes/gui/button.h" />
 		<Unit filename="includes/gui/click.cpp" />
 		<Unit filename="includes/gui/click.h" />

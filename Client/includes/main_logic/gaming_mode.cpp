@@ -139,8 +139,9 @@ bool Gaming_mode::run()
 
 Gaming_mode::Gaming_mode(utility::Configuration * init_config):
     main_config(init_config),
-    main_group( utility::Configuration("config/groups/banana.cfg"))
+    main_group( utility::Configuration("config/groups/fruits.cfg"))
 {
+    music.stop();
     music.init("sound/tetris.mp3");
     music.play();
     score_stopwatch.start();
