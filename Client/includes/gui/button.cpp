@@ -21,6 +21,13 @@ void Button::init_image(std::string image)
     location.h = texture.get_height();
 }
 
+void Button::init_image(video::Texture init_texture)
+{
+    texture = init_texture;
+    location.w = texture.get_width();
+    location.h = texture.get_height();
+}
+
 video::Texture & Button::get_texture()
 {
     return texture;

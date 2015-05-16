@@ -24,8 +24,6 @@ Word_group::Word_group(utility::Configuration cfg)
         }
         words.push_back(buffer[0]);
         video::Texture texture_buffer;
-        std::remove_if(buffer[1].begin(), buffer[1].end(), isspace);
-        buffer[1].pop_back();
         texture_buffer.init(std::string("./images/")+name+std::string("/")+buffer[1]);
         textures.push_back(texture_buffer);
     }

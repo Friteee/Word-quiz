@@ -25,7 +25,7 @@ class Gaming_mode : public Program_mode
 {
 public :
 
-    Gaming_mode(utility::Configuration * init_config);
+    Gaming_mode(utility::Configuration * init_config , std::string filename);
     bool run ()override;
     bool handle_input()override;
 

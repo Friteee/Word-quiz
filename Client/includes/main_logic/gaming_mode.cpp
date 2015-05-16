@@ -137,9 +137,9 @@ bool Gaming_mode::run()
  * Constructor
  */
 
-Gaming_mode::Gaming_mode(utility::Configuration * init_config):
+Gaming_mode::Gaming_mode(utility::Configuration * init_config , std::string filename):
     main_config(init_config),
-    main_group( utility::Configuration("config/groups/fruits.cfg"))
+    main_group( utility::Configuration(filename))
 {
     music.stop();
     music.init("sound/tetris.mp3");

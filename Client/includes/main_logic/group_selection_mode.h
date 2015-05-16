@@ -29,7 +29,12 @@ private:
     utility::Configuration groups;
     // gui manager
     gui::Gui_manager main_gui;
-    //groups
+    //group names
+    std::vector<std::string> group_names;
+    //group images
+    std::vector<video::Texture> group_images;
+    // current pos
+    unsigned int position;
 };
 
 }

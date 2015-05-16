@@ -33,6 +33,9 @@ std::vector<std::string> get_separated_strings(std::string searched)
     std::stringstream ss(searched);
     std::string item;
     while (std::getline(ss, item, delim)) {
+        const auto start = item.find_first_not_of(" \t");
+        const auto end = item.find_last_not_of(" \t");
+        item = item.substr(start , end - start + 1);
         returned.push_back(item);
     }
     return returned;

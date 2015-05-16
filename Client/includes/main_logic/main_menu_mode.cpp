@@ -145,11 +145,33 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     };
     quit_button->init_function(quit_click_function);
 
+    gui::Button * decrease_volume;
+    decrease_volume = new gui::Button(100,100);
+    decrease_volume->init_image(main_config->find_string("decrease_volume"));
+    decrease_volume->change_position(video::Video_subsystem::get_width() - 3 * decrease_volume->get_width() ,decrease_volume->get_height()/2);
+    auto decrease_volume_function = []()
+    {
+        audio::Music::change_volume(-10);
+    };
+    decrease_volume->init_function(decrease_volume_function);
+
+    gui::Button * increase_volume;
+    increase_volume = new gui::Button(100,100);
+    increase_volume->init_image(main_config->find_string("increase_volume"));
+    increase_volume->change_position(video::Video_subsystem::get_width() - 1.5 * increase_volume->get_width() ,increase_volume->get_height()/2);
+    auto increase_volume_function = []()
+    {
+        audio::Music::change_volume(10);
+    };
+    increase_volume->init_function(increase_volume_function);
+
 
     //add elements to gui manager
     main_gui.add_element(play_button);
     main_gui.add_element(help_button);
     main_gui.add_element(quit_button);
+    main_gui.add_element(decrease_volume);
+    main_gui.add_element(increase_volume);
 
     // background
     background.change_image(main_config->find_string("main_background").c_str());

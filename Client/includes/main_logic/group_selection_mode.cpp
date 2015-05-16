@@ -4,7 +4,7 @@
 #include "../gui/button.h"
 #include "../gui/click.h"
 #include "../audio/music.h"
-
+#include "../utility/functions.h"
 
 
 namespace main_logic
@@ -122,29 +122,97 @@ Group_selection_mode::Group_selection_mode(utility::Configuration * init_config)
     main_config(init_config),
     groups(std::string("./config/")+main_config->find_string("group_config"))
 {
+    position = 0;
+
+    std::vector<std::string> group_string_buffer = groups.find_strings("group");
+
+    for(std::string  a : group_string_buffer)
+    {
+        std::vector<std::string> another_buffer = utility::get_separated_strings(a);
+        group_names.push_back(another_buffer[0]);
+        video::Texture image_buffer;
+        image_buffer.init(another_buffer[1]);
+        group_images.push_back(image_buffer);
+    }
+
+    gui::Button * visible_group;
     gui::Button * next_group;
+    gui::Button * previous_group;
+    gui::Button * decrease_volume;
+    gui::Button * increase_volume;
+
+    visible_group = new gui::Button(100,100);
+    visible_group->init_image(group_images[position]);
+    visible_group->set_width(video::Video_subsystem::get_width() / 2);
+    visible_group->set_height(video::Video_subsystem::get_height() / 2);
+    visible_group->change_position(video::Video_subsystem::get_width() / 2 - visible_group->get_width() / 2 , video::Video_subsystem::get_height() / 2 - visible_group->get_height()/2);
+    auto visible_group_function = [this]()
+    {
+        main_logic::Game_logic::set_current_mode( new Gaming_mode (main_config , group_names[position]) );
+    };
+    visible_group->init_function(visible_group_function);
+
     next_group = new gui::Button(100,100);
     next_group->init_image(main_config->find_string("left_arrow"));
+    next_group->set_width(video::Video_subsystem::get_width() / 6);
     next_group->change_position(video::Video_subsystem::get_width()-next_group->get_width(),video::Video_subsystem::get_height()/2-next_group->get_height()/2);
-    auto next_function = []()
+    auto next_function = [this,visible_group]()
     {
+        if(position + 1 >= group_names.size())
+            return;
+        else
+            position++;
+
+        visible_group->init_image(group_images[position]);
+        visible_group->set_width(video::Video_subsystem::get_width() / 2);
+        visible_group->set_height(video::Video_subsystem::get_height() / 2);
+        visible_group->change_position(video::Video_subsystem::get_width() / 2 - visible_group->get_width() / 2 , video::Video_subsystem::get_height() / 2 - visible_group->get_height()/2);
 
     };
     next_group->init_function(next_function);
 
-    gui::Button * previous_group;
     previous_group = new gui::Button(100,100);
     previous_group->init_image(main_config->find_string("left_arrow"));
     previous_group->get_texture().set_angle(180);
+    previous_group->set_width(video::Video_subsystem::get_width() / 6);
     previous_group->change_position(0,video::Video_subsystem::get_height()/2-previous_group->get_height()/2);
-    auto previous_function = []()
+    auto previous_function = [this,visible_group]()
     {
+        if(position - 1 > group_names.size())
+            return;
+        else
+            position--;
 
+        visible_group->init_image(group_images[position]);
+        visible_group->set_width(video::Video_subsystem::get_width() / 2);
+        visible_group->set_height(video::Video_subsystem::get_height() / 2);
+        visible_group->change_position(video::Video_subsystem::get_width() / 2 - visible_group->get_width() / 2 , video::Video_subsystem::get_height() / 2 - visible_group->get_height()/2);
     };
     previous_group->init_function(previous_function);
 
+    decrease_volume = new gui::Button(100,100);
+    decrease_volume->init_image(main_config->find_string("decrease_volume"));
+    decrease_volume->change_position(video::Video_subsystem::get_width() - 3 * decrease_volume->get_width() ,decrease_volume->get_height()/2);
+    auto decrease_volume_function = []()
+    {
+        audio::Music::change_volume(-10);
+    };
+    decrease_volume->init_function(decrease_volume_function);
+
+    increase_volume = new gui::Button(100,100);
+    increase_volume->init_image(main_config->find_string("increase_volume"));
+    increase_volume->change_position(video::Video_subsystem::get_width() - 1.5 * increase_volume->get_width() ,increase_volume->get_height()/2);
+    auto increase_volume_function = []()
+    {
+        audio::Music::change_volume(10);
+    };
+    increase_volume->init_function(increase_volume_function);
+
     main_gui.add_element(next_group);
     main_gui.add_element(previous_group);
+    main_gui.add_element(decrease_volume);
+    main_gui.add_element(increase_volume);
+    main_gui.add_element(visible_group);
 
     main_background = new gui::Background(main_config->find_string("main_background").c_str());
 }

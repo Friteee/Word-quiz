@@ -25,9 +25,25 @@ Sound::~Sound()
     Mix_FreeChunk( *sound.get() );
 }
 
-void Sound::change_volume(unsigned int volume)
+void Sound::change_volume(int amount)
 {
+
+    if(volume + amount> 128 && amount > 0)
+        volume = 128;
+    else if (volume + amount > 128 && amount < 0)
+        volume = 0;
+    else
+        volume += amount;
+
     Mix_Volume(1,volume);
 }
+
+void Sound::set_volume(unsigned int init_volume)
+{
+    volume = init_volume;
+    Mix_Volume(1,volume);
+}
+
+unsigned int Sound::volume = 128;
 
 }

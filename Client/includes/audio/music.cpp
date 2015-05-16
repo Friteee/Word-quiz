@@ -7,6 +7,7 @@ namespace audio
 
 void Music::init(std::string init_sound)
 {
+
     Mix_Music * buffer = Mix_LoadMUS( init_sound.c_str());
     if( buffer == NULL )
     {
@@ -46,9 +47,24 @@ Music::~Music()
     Mix_FreeMusic( *sound.get() );
 }
 
-void Music::change_volume(unsigned int volume)
+void Music::change_volume(int amount)
 {
+    if(volume + amount> 128 && amount > 0)
+        volume = 128;
+    else if (volume + amount > 128 && amount < 0)
+        volume = 0;
+    else
+        volume += amount;
+
     Mix_VolumeMusic(volume);
 }
+
+void Music::set_volume(unsigned int init_volume)
+{
+    volume = init_volume;
+    Mix_VolumeMusic(volume);
+}
+
+unsigned int Music::volume = 128;
 
 }
