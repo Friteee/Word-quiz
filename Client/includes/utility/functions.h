@@ -1,3 +1,7 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <string>
+#include <vector>
+// *** END ***
 #ifndef FUNCTIONS_H_INCLUDED
 #define FUNCTIONS_H_INCLUDED
 

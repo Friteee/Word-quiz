@@ -1,3 +1,6 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <cassert>
+// *** END ***
 
 #include "progress_bar.h"
 #include "../video/window.h"

@@ -68,6 +68,8 @@
 		<Unit filename="includes/game/animation.h" />
 		<Unit filename="includes/game/group.cpp" />
 		<Unit filename="includes/game/group.h" />
+		<Unit filename="includes/game/highscore.cpp" />
+		<Unit filename="includes/game/highscore.h" />
 		<Unit filename="includes/game/word_group.cpp" />
 		<Unit filename="includes/game/word_group.h" />
 		<Unit filename="includes/gui/background.cpp" />
@@ -94,6 +96,8 @@
 		<Unit filename="includes/main_logic/group_selection_mode.h" />
 		<Unit filename="includes/main_logic/help_mode.cpp" />
 		<Unit filename="includes/main_logic/help_mode.h" />
+		<Unit filename="includes/main_logic/leaderboard.cpp" />
+		<Unit filename="includes/main_logic/leaderboard.h" />
 		<Unit filename="includes/main_logic/main_menu_mode.cpp" />
 		<Unit filename="includes/main_logic/main_menu_mode.h" />
 		<Unit filename="includes/main_logic/program_mode.h" />

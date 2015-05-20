@@ -1,3 +1,6 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <cassert>
+// *** END ***
 
 #include "word_group.h"
 #include "../utility/functions.h"
@@ -11,6 +14,7 @@ namespace game
 Word_group::Word_group(utility::Configuration cfg)
 {
     std::vector <std::string> words_and_textures = cfg.find_strings("word");
+    leaderboards_filename = cfg.find_string("leaderboards");
     name = cfg.find_string("name");
 
     for(auto a : words_and_textures)
@@ -69,6 +73,11 @@ void Word_group::delete_word(unsigned int index)
     }
     words.erase(words.begin()+index);
     textures.erase(textures.begin()+index);
+}
+
+std::string Word_group::get_leaderboards()
+{
+    return leaderboards_filename;
 }
 
 }

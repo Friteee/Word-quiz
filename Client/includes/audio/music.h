@@ -14,7 +14,7 @@ class Music
 public:
     void init(std::string init_sound);
     void play();
-    void stop();
+    static void stop();
     void pause();
     ~Music();
     static void set_volume(unsigned int volume);

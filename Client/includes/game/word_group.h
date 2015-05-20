@@ -16,10 +16,12 @@ public:
     std::string      get_word   (unsigned int index);
     video::Texture & get_texture(unsigned int index);
     unsigned int     get_size();
+    std::string      get_leaderboards();
     void             delete_word(unsigned int index);
 
 private:
     std::string name;
+    std::string leaderboards_filename;
     std::vector <video::Texture> textures;
     std::vector <std::string> words;
 };

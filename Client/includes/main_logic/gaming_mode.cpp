@@ -3,6 +3,7 @@
 #include "main_menu_mode.h"
 #include "game_logic.h"
 #include "../gui/progress_bar.h"
+#include "leaderboard.h"
 #include <cstdlib>
 #include <sstream>
 
@@ -112,7 +113,7 @@ bool Gaming_mode::run()
     if(input_word==word)
         quit = change_word();
     if(quit)
-        Game_logic::set_current_mode (new Main_menu_mode (main_config) );
+        Game_logic::set_current_mode (new Leaderboard ( main_group.get_leaderboards() , main_config ) );
 
     std::stringstream ss;
     ss <<"Time : "<<score_stopwatch.get_ticks()/1000;
