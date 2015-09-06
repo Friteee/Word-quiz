@@ -148,7 +148,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     gui::Button * decrease_volume;
     decrease_volume = new gui::Button(100,100);
     decrease_volume->init_image(main_config->find_string("decrease_volume"));
-    decrease_volume->change_position(video::Video_subsystem::get_width() - 3 * decrease_volume->get_width() ,decrease_volume->get_height()/2);
+    decrease_volume->change_position(video::Video_subsystem::get_width() - 4.5 * decrease_volume->get_width() ,decrease_volume->get_height()/2);
     auto decrease_volume_function = []()
     {
         audio::Music::change_volume(-10);
@@ -165,6 +165,16 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     };
     increase_volume->init_function(increase_volume_function);
 
+    gui::Button * stop_music;
+    stop_music = new gui::Button(100,100);
+    stop_music->init_image(main_config->find_string("note"));
+    stop_music->change_position(video::Video_subsystem::get_width() - 3 * stop_music->get_width() ,stop_music->get_height()/2);
+    std::function<void()> stop_music_function = [stop_music,this]()
+    {
+
+    };
+    stop_music->init_function(stop_music_function);
+
 
     //add elements to gui manager
     main_gui.add_element(play_button);
@@ -172,6 +182,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     main_gui.add_element(quit_button);
     main_gui.add_element(decrease_volume);
     main_gui.add_element(increase_volume);
+    main_gui.add_element(stop_music);
 
     // background
     background.change_image(main_config->find_string("main_background").c_str());

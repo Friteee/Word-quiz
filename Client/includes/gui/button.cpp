@@ -57,7 +57,9 @@ void Button::handle_click(int x, int y)
     if(visible && x > location.x && x < location.x + location.w && y > location.y && y < location.y + location.h)
     {
         if(on_click)
+        {
             on_click();
+        }
         else
             printf("Warning : no function specified for a button\n");
     }

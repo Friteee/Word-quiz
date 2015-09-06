@@ -6,7 +6,8 @@ namespace main_logic
 
 Leaderboard::Leaderboard(std::string filename , utility::Configuration * config)
 {
-
+    scores.init(filename);
+    scores.save();
     main_background.change_image(config->find_string("main_background").c_str() );
 
 }

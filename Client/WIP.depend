@@ -1628,7 +1628,7 @@
 1426072026 source:d:\github\word-quiz\client\includes\gui\click.cpp
 	"click.h"
 
-1426072532 source:d:\github\word-quiz\client\includes\gui\gui_manager.cpp
+1432464903 source:d:\github\word-quiz\client\includes\gui\gui_manager.cpp
 	"gui_manager.h"
 	"click.h"
 	<cstdio>
@@ -1693,7 +1693,7 @@
 	"camera.h"
 	"window.h"
 
-1432145051 source:d:\github\word-quiz\client\includes\video\texture.cpp
+1432146695 source:d:\github\word-quiz\client\includes\video\texture.cpp
 	<cassert>
 	"texture.h"
 	"window.h"
@@ -1811,16 +1811,17 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1432146530 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
+1432464979 source:d:\github\word-quiz\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"main_menu_mode.h"
 	"game_logic.h"
 	"../gui/progress_bar.h"
+	"../audio/music.h"
 	"leaderboard.h"
 	<cstdlib>
 	<sstream>
 
-1432138599 source:d:\github\word-quiz\client\includes\main_logic\group_selection_mode.cpp
+1432464738 source:d:\github\word-quiz\client\includes\main_logic\group_selection_mode.cpp
 	"group_selection_mode.h"
 	"game_logic.h"
 	"../gui/button.h"
@@ -1833,7 +1834,7 @@
 	"../gui/background.h"
 	"../gui/gui_manager.h"
 
-1426071994 source:d:\github\word-quiz\client\includes\main_logic\help_mode.cpp
+1432461562 source:d:\github\word-quiz\client\includes\main_logic\help_mode.cpp
 	"help_mode.h"
 	"../video/window.h"
 	"../gui/click.h"
@@ -1850,7 +1851,7 @@
 	"../gui/gui_manager.h"
 	"../gui/background.h"
 
-1431766428 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
+1432464454 source:d:\github\word-quiz\client\includes\main_logic\main_menu_mode.cpp
 	<cstdio>
 	<cmath>
 	"main_menu_mode.h"
@@ -1937,7 +1938,7 @@
 	<string>
 	<memory>
 
-1431764343 source:d:\github\word-quiz\client\includes\audio\music.cpp
+1432464771 source:d:\github\word-quiz\client\includes\audio\music.cpp
 	"music.h"
 	<cstdio>
 
@@ -1946,7 +1947,7 @@
 	<string>
 	<memory>
 
-1431768066 source:d:\github\word-quiz\client\includes\gui\button.cpp
+1432464804 source:d:\github\word-quiz\client\includes\gui\button.cpp
 	"button.h"
 	"../video/window.h"
 	<cstdio>
@@ -1957,7 +1958,7 @@
 
 1431719959 source:d:\github\word-quiz\client\includes\game\group.cpp
 
-1432138118 source:d:\github\word-quiz\client\includes\game\highscore.cpp
+1432379635 source:d:\github\word-quiz\client\includes\game\highscore.cpp
 	<fstream>
 	"highscore.h"
 
@@ -1965,10 +1966,10 @@
 	<utility>
 	"../utility/configuration.h"
 
-1432145420 source:d:\github\word-quiz\client\includes\main_logic\leaderboard.cpp
+1432379678 source:d:\github\word-quiz\client\includes\main_logic\leaderboard.cpp
 	"leaderboard.h"
 
-1432146199 d:\github\word-quiz\client\includes\main_logic\leaderboard.h
+1432379364 d:\github\word-quiz\client\includes\main_logic\leaderboard.h
 	<string>
 	"program_mode.h"
 	"../gui/background.h"

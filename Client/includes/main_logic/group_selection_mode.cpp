@@ -45,7 +45,7 @@ bool Group_selection_mode::handle_input()
             case SDLK_TAB:
                 break;
             case SDLK_ESCAPE:
-                return false;
+                main_logic::Game_logic::set_current_mode( new Main_menu_mode (main_config) );
                 break;
             }
             break;
@@ -216,7 +216,6 @@ Group_selection_mode::Group_selection_mode(utility::Configuration * init_config)
     {
 
     };
-
     stop_music->init_function(stop_music_function);
 
     main_gui.add_element(next_group);

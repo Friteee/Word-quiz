@@ -35,6 +35,7 @@ void Highscore::save()
     {
         out<<leaderboard[a].first<<" "<<leaderboard[a].second<<std::endl;
     }
+    out.close();
 }
 
 }

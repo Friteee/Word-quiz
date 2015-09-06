@@ -3,6 +3,7 @@
 #include "main_menu_mode.h"
 #include "game_logic.h"
 #include "../gui/progress_bar.h"
+#include "../audio/music.h"
 #include "leaderboard.h"
 #include <cstdlib>
 #include <sstream>
@@ -16,6 +17,8 @@ namespace main_logic
 
 bool Gaming_mode::handle_input()
 {
+    gui::Click click;
+    click.set_clicked(false);
     while(SDL_PollEvent(&event))
     {
         switch(event.type)
@@ -51,11 +54,23 @@ bool Gaming_mode::handle_input()
 
                 break;
             case SDLK_ESCAPE:
-                return false;
+                main_logic::Game_logic::set_current_mode( new Main_menu_mode (main_config) );
                 break;
             }
             break;
         case SDL_MOUSEBUTTONDOWN:
+            click.set_clicked(false);
+            if(event.button.button == SDL_BUTTON_LEFT)
+            {
+                click.set_location(event.button.x,event.button.y);
+            }
+            break;
+        case SDL_MOUSEBUTTONUP:
+            click.set_clicked(true);
+            if(event.button.button == SDL_BUTTON_LEFT)
+            {
+                click.set_location(event.button.x,event.button.y);
+            }
             break;
         case SDL_WINDOWEVENT:
             switch(event.window.event)
@@ -113,14 +128,14 @@ bool Gaming_mode::run()
     if(input_word==word)
         quit = change_word();
     if(quit)
-        Game_logic::set_current_mode (new Leaderboard ( main_group.get_leaderboards() , main_config ) );
+        Game_logic::set_current_mode (new Main_menu_mode ( main_config ) );
 
     std::stringstream ss;
     ss <<"Time : "<<score_stopwatch.get_ticks()/1000;
     score->change_text(ss.str());
 
     SDL_Rect blit_location ;
-    blit_location.w = video::Video_subsystem::get_width()/4;
+    blit_location.w = video::Video_subsystem::get_width()/3;
     blit_location.h = video::Video_subsystem::get_width()/4;
     blit_location.x = video::Video_subsystem::get_width()/2 - blit_location.w/2;
     blit_location.y = video::Video_subsystem::get_height()/2 - blit_location.h;
@@ -200,6 +215,37 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config , std::string file
     };
     progress_bar->set_function(progress_function);
     progress_bar->start();
+
+    gui::Button * decrease_volume;
+    decrease_volume = new gui::Button(100,100);
+    decrease_volume->init_image(main_config->find_string("decrease_volume"));
+    decrease_volume->change_position(video::Video_subsystem::get_width() - 4.5 * decrease_volume->get_width() ,decrease_volume->get_height()/2);
+    auto decrease_volume_function = []()
+    {
+        audio::Music::change_volume(-10);
+    };
+    decrease_volume->init_function(decrease_volume_function);
+
+    gui::Button * increase_volume;
+    increase_volume = new gui::Button(100,100);
+    increase_volume->init_image(main_config->find_string("increase_volume"));
+    increase_volume->change_position(video::Video_subsystem::get_width() - 1.5 * increase_volume->get_width() ,increase_volume->get_height()/2);
+    auto increase_volume_function = []()
+    {
+        audio::Music::change_volume(10);
+    };
+    increase_volume->init_function(increase_volume_function);
+
+    gui::Button * stop_music;
+    stop_music = new gui::Button(100,100);
+    stop_music->init_image(main_config->find_string("note"));
+    stop_music->change_position(video::Video_subsystem::get_width() - 3 * stop_music->get_width() ,stop_music->get_height()/2);
+    std::function<void()> stop_music_function = [stop_music,this]()
+    {
+
+    };
+    stop_music->init_function(stop_music_function);
+
     // initialize score visualization
     word_x = 20;
     word_y = 0;
@@ -217,6 +263,9 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config , std::string file
     gui_manager.add_element(word_text);
     gui_manager.add_element(current_input);
     gui_manager.add_element(progress_bar);
+    gui_manager.add_element(decrease_volume);
+    gui_manager.add_element(increase_volume);
+    gui_manager.add_element(stop_music);
     //start input
     SDL_StartTextInput();
 

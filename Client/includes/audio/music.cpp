@@ -55,7 +55,6 @@ void Music::change_volume(int amount)
         volume = 0;
     else
         volume += amount;
-
     Mix_VolumeMusic(volume);
 }
 

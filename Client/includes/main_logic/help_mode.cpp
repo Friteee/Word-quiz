@@ -88,9 +88,7 @@ bool Help_mode::handle_input()
             case SDLK_r:
                 break;
             case SDLK_ESCAPE:
-                break;
-            case SDLK_q:
-                return false;
+                main_logic::Game_logic::set_current_mode( new Main_menu_mode (main_config) );
                 break;
             default:
                 break;

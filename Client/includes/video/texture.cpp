@@ -1,3 +1,6 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <cassert>
+// *** END ***
 
 #include "texture.h"
 #include "window.h"
@@ -10,7 +13,7 @@ namespace video
 Texture::Texture()
 {
     angle = 0;
-    // "Nope. Sorry. Nothing"
+
 }
 
 /**
@@ -193,13 +196,14 @@ void Texture::create_texture(std::string filename)
 
 void Texture::reset()
 {
-    if(surface.unique())
+    if(surface.unique() )
     {
-        SDL_FreeSurface(*surface);
+        SDL_FreeSurface (*surface);
     }
-    if(texture.unique())
+
+    if(texture.unique() )
     {
-        SDL_DestroyTexture(*texture);
+        SDL_DestroyTexture (*texture);
     }
     surface.reset();
     texture.reset();

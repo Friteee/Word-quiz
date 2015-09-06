@@ -42,9 +42,7 @@ void Gui_manager::update()
         if(click.has_clicked())
         {
             int x , y;
-
             click.get_location(x,y);
-
             elements[a]->handle_click(x,y);
         }
         elements[a]->update();
