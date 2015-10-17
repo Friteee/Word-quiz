@@ -25,11 +25,13 @@ Help_mode::Help_mode(utility::Configuration * config):
     return_button->init_function(return_button_function);
     main_gui.add_element(return_button);
 
-    gui::Text * help_text = new gui::Text(main_config,"Try to gain as much points", 100, 100, 32, SDL_Color {235,235,235});
-    gui::Text * help_text_second = new gui::Text(main_config,"as you can in given period of time!", 100, 150, 32, SDL_Color {235,235,235});
+    gui::Text * help_text = new gui::Text(main_config,"Open the groups of words to practice them", 100, 100, 48, SDL_Color {235,235,235});
+    gui::Text * help_text_second = new gui::Text(main_config,"Try to guess all words correctly as fast as you can", 100, 200, 48, SDL_Color {235,235,235});
+    gui::Text * help_text_third = new gui::Text(main_config,"As more time is spent on a word, more letters will open up", 100, 300, 48, SDL_Color {235,235,235});
 
     main_gui.add_element(help_text);
     main_gui.add_element(help_text_second);
+    main_gui.add_element(help_text_third);
 
 }
 
