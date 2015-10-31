@@ -14,6 +14,7 @@ void Music::init(std::string init_sound)
         printf( "Failed to load a sound effect from %s! SDL_mixer Error: %s\n", init_sound.c_str() , Mix_GetError() );
     }
     sound = std::make_shared<Mix_Music*>( buffer );
+    Mix_VolumeMusic(volume);
 }
 
 void Music::play()
@@ -64,6 +65,6 @@ void Music::set_volume(unsigned int init_volume)
     Mix_VolumeMusic(volume);
 }
 
-unsigned int Music::volume = 128;
+unsigned int Music::volume = 24;
 
 }

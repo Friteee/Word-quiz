@@ -13,6 +13,7 @@ void Sound::init(std::string init_sound)
         printf( "Failed to load a sound effect from %s! SDL_mixer Error: %s\n", init_sound.c_str() , Mix_GetError() );
     }
     sound = std::make_shared<Mix_Chunk*>( buffer );
+    Mix_Volume(1,volume);
 }
 
 void Sound::play()
